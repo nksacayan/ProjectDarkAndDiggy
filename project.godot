@@ -22,6 +22,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[layer_names]
+
+2d_physics/layer_1="Terrain"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
