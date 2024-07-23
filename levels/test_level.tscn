@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4pgqxkirjwoj"]
+[gd_scene load_steps=4 format=3 uid="uid://c4pgqxkirjwoj"]
 
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tileset.tres" id="1_2g07l"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_yqqgh"]
+[ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="3_5ebml"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -11,4 +12,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262143, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 131084, 0, 0, 65548, 0, 0, 12, 0, 0, 196602, 0, 0, 131066, 0, 0, 65530, 0, 0, -6, 0, 0)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_yqqgh")]
+visible = false
 position = Vector2(992, 416)
+
+[node name="Kobold" parent="." instance=ExtResource("3_5ebml")]
