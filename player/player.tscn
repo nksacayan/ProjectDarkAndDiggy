@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd6ndg0vgc407"]
+[gd_scene load_steps=6 format=3 uid="uid://cd6ndg0vgc407"]
 
 [ext_resource type="Script" path="res://player/player_body.gd" id="1_eeh5k"]
 [ext_resource type="Texture2D" uid="uid://d3ypsypb2iomr" path="res://player/assets/sprites/test_dward.PNG" id="2_wt3oh"]
 [ext_resource type="Script" path="res://player/PlayerInput.gd" id="3_rrhqs"]
+[ext_resource type="PackedScene" uid="uid://co2br1d8dw6vr" path="res://player/digger/digger.tscn" id="4_12lik"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmqaa"]
 radius = 64.0
@@ -25,5 +26,8 @@ zoom = Vector2(0.5, 0.5)
 [node name="PlayerInput" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_rrhqs")
+
+[node name="Digger" parent="." instance=ExtResource("4_12lik")]
+unique_name_in_owner = true
 
 [connection signal="jump_input" from="PlayerInput" to="." method="_on_player_input_jump_input"]

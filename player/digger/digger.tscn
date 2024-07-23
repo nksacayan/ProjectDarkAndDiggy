@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://co2br1d8dw6vr"]
+
+[ext_resource type="Script" path="res://player/digger/digger.gd" id="1_1nv6f"]
+
+[node name="Digger" type="Node2D"]
+script = ExtResource("1_1nv6f")
+
+[node name="DigTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(0, 0)
+
+[connection signal="timeout" from="DigTimer" to="." method="_on_dig_timer_timeout"]
