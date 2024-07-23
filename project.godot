@@ -13,7 +13,7 @@ config_version=5
 config/name="ProjectDarkAndDiggy"
 run/main_scene="res://levels/test_level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://player/assets/sprites/test_dward.PNG"
+config/icon="res://player/assets/sprites/test_dwarf.PNG"
 
 [display]
 

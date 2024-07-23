@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3ypsypb2iomr"
-path="res://.godot/imported/test_dward.PNG-a76e363642bfa102e6d64cf62ae2b641.ctex"
+path="res://.godot/imported/test_dwarf.PNG-e3ed284212601d5df61ebbe6010a5c10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/sprites/test_dward.PNG"
-dest_files=["res://.godot/imported/test_dward.PNG-a76e363642bfa102e6d64cf62ae2b641.ctex"]
+source_file="res://player/assets/sprites/test_dwarf.PNG"
+dest_files=["res://.godot/imported/test_dwarf.PNG-e3ed284212601d5df61ebbe6010a5c10.ctex"]
 
 [params]
 

@@ -7,6 +7,7 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var player_input: PlayerInput = %PlayerInput
 @onready var digger: Digger = %Digger
+@onready var health: Health = %Health
 
 func _physics_process(delta: float) -> void:
 	_do_movement(delta)
