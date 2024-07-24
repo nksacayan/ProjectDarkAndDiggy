@@ -8,9 +8,12 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player_input: PlayerInput = %PlayerInput
 @onready var digger: Digger = %Digger
 @onready var health: Health = %Health
+@onready var animation_handler: PlayerAnimationHandler = %AnimatedSprite2D as PlayerAnimationHandler
+
 
 func _physics_process(delta: float) -> void:
 	_do_movement(delta)
+	animation_handler.play_animation(velocity)
 	_try_digging()
 
 func _on_player_input_jump_input() -> void:

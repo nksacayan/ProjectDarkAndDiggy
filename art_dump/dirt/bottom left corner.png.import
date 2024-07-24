@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ypsypb2iomr"
-path="res://.godot/imported/test_dwarf.PNG-e3ed284212601d5df61ebbe6010a5c10.ctex"
+uid="uid://bf4bg8uym7vde"
+path="res://.godot/imported/bottom left corner.png-4533fc04220d1ae213ccd66421e02327.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/sprites/test_dwarf.PNG"
-dest_files=["res://.godot/imported/test_dwarf.PNG-e3ed284212601d5df61ebbe6010a5c10.ctex"]
+source_file="res://art_dump/dirt/bottom left corner.png"
+dest_files=["res://.godot/imported/bottom left corner.png-4533fc04220d1ae213ccd66421e02327.ctex"]
 
 [params]
 
