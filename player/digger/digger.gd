@@ -3,7 +3,7 @@ extends Node2D
 
 const HORIZONTAL_TARGET_DISTANCE: int = 96
 const VERTICAL_TARGET_DISTANCE: int = 160
-const DEFAULT_TILE_LAYER: int = 0
+const DEFAULT_TILE_LAYER: int = 1
 const TARGET_CELL_SENTINEL_VALUE: Vector2i = Vector2i.MIN
 
 @onready var raycast: RayCast2D = %RayCast2D

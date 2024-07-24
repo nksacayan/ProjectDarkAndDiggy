@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4pgqxkirjwoj"]
 
-[ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tileset.tres" id="1_2g07l"]
+[ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_2g07l"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_yqqgh"]
 [ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="3_5ebml"]
 

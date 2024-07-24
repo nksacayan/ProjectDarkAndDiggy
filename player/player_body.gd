@@ -13,7 +13,7 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	_do_movement(delta)
-	animation_handler.play_animation(velocity)
+	animation_handler.handle_animation(velocity)
 	_try_digging()
 
 func _on_player_input_jump_input() -> void:
