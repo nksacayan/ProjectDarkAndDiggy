@@ -12,7 +12,17 @@ format = 2
 layer_0/tile_data = PackedInt32Array(196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262143, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 131084, 0, 0, 65548, 0, 0, 12, 0, 0, 196602, 0, 0, 131066, 0, 0, 65530, 0, 0, -6, 0, 0)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_yqqgh")]
-visible = false
-position = Vector2(992, 416)
 
 [node name="Kobold" parent="." instance=ExtResource("3_5ebml")]
+position = Vector2(1076, 526)
+
+[node name="PatrolBoundLeft" parent="Kobold" index="2"]
+position = Vector2(44, 630)
+
+[node name="PatrolBoundRight" parent="Kobold" index="3"]
+position = Vector2(2712, 652)
+
+[node name="PatrolBoundStart" parent="Kobold" index="4"]
+position = Vector2(1261, 651)
+
+[editable path="Kobold"]
