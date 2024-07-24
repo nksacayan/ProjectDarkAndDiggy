@@ -14,13 +14,13 @@ layer_0/tile_data = PackedInt32Array(196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 1
 [node name="PlayerBody" parent="." instance=ExtResource("2_yqqgh")]
 
 [node name="Kobold" parent="." instance=ExtResource("3_5ebml")]
-position = Vector2(1076, 526)
+position = Vector2(1265, 602)
 
 [node name="PatrolBoundLeft" parent="Kobold" index="2"]
-position = Vector2(44, 630)
+position = Vector2(617, 660)
 
 [node name="PatrolBoundRight" parent="Kobold" index="3"]
-position = Vector2(2712, 652)
+position = Vector2(1794, 640)
 
 [node name="PatrolBoundStart" parent="Kobold" index="4"]
 position = Vector2(1261, 651)
