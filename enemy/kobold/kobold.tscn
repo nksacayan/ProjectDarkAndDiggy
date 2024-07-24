@@ -48,3 +48,8 @@ enemy = NodePath("../..")
 [node name="PlayerDetectionCast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(200, 0)
+
+[node name="FloorDetectionCast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(128, 6)
+target_position = Vector2(0, 200)

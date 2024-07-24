@@ -4,6 +4,8 @@ class_name KoboldBody2D
 
 @onready var sprite2D : Sprite2D = %Sprite2D
 @onready var player_detect_cast : RayCast2D = %PlayerDetectionCast
+@onready var floor_detect_cast : RayCast2D = %FloorDetectionCast
+
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
