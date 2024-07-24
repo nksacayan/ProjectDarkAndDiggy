@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4pgqxkirjwoj"]
 
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tileset.tres" id="1_2g07l"]
-[ext_resource type="TileSet" uid="uid://xem0f6yr1tkk" path="res://tile_stuff/placeholder/placeholder_tileset.tres" id="2_hnsp4"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_yqqgh"]
+[ext_resource type="PackedScene" uid="uid://cqb55045va5iy" path="res://objects/treasure/treasure.tscn" id="3_wwk7g"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -11,11 +11,8 @@ tile_set = ExtResource("1_2g07l")
 format = 2
 layer_0/tile_data = PackedInt32Array(196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262143, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 131084, 0, 0, 65548, 0, 0, 12, 0, 0, 196602, 0, 0, 131066, 0, 0, 65530, 0, 0, -6, 0, 0)
 
-[node name="TestTileMap" type="TileMap" parent="."]
-scale = Vector2(4, 4)
-tile_set = ExtResource("2_hnsp4")
-format = 2
-layer_0/tile_data = PackedInt32Array(131078, 1, 0, 65542, 1, 0, 196606, 1, 0, 11, 1, 0, 10, 1, 0, 9, 1, 0, 8, 1, 0, 7, 1, 0, 6, 1, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 0, 65532, 1, 0, 65531, 1, 0, 131067, 1, 0, 131068, 1, 0, 196604, 1, 0, 196605, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 131073, 1, 0, 131072, 1, 0, 196607, 1, 0, 131074, 1, 0, 65543, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 65545, 1, 0, 65546, 1, 0, 65544, 1, 0, 65547, 1, 0, 131083, 1, 0, 131082, 1, 0, -65525, 1, 0, -65526, 1, 0, -65527, 1, 0, -65528, 1, 0, -65529, 1, 0, -65530, 1, 0, -65531, 1, 0, -65532, 1, 0, -65533, 1, 0, -65534, 1, 0, -65535, 1, 0, -65536, 1, 0, -1, 1, 0, -2, 1, 0, -3, 1, 0, -4, 1, 0)
-
 [node name="PlayerBody" parent="." instance=ExtResource("2_yqqgh")]
 position = Vector2(992, 416)
+
+[node name="Treasure" parent="." instance=ExtResource("3_wwk7g")]
+position = Vector2(1600, 640)

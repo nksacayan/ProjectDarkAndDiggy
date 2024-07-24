@@ -15,6 +15,10 @@ run/main_scene="res://levels/test_level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://player/assets/sprites/test_dwarf.PNG"
 
+[autoload]
+
+ScorekeeperSingleton="*res://autoloads/scorekeeper_singleton/scorekeeper_singleton.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -53,6 +57,8 @@ dig_down={
 [layer_names]
 
 2d_physics/layer_1="Terrain"
+2d_physics/layer_2="Collectable"
+2d_physics/layer_3="Player"
 
 [rendering]
 
