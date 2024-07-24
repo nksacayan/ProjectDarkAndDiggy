@@ -6,5 +6,5 @@ extends Node2D
 
 ## Should only trigger on player collisions due to mask
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	ScorekeeperSingleton.score += value
+	AutoloadScorekeeper.score += value
 	queue_free()

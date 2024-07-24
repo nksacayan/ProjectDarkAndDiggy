@@ -17,7 +17,7 @@ config/icon="res://player/assets/sprites/test_dwarf.PNG"
 
 [autoload]
 
-ScorekeeperSingleton="*res://autoloads/scorekeeper_singleton/scorekeeper_singleton.tscn"
+AutoloadScorekeeper="*res://autoloads/scorekeeper/scorekeeper.tscn"
 
 [display]
 

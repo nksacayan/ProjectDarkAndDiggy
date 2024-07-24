@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3wg11bovesgj"]
-
-[ext_resource type="Script" path="res://autoloads/scorekeeper_singleton/scorekeeper_singleton.gd" id="1_q4cki"]
-
-[node name="ScorekeeperSingleton" type="Node"]
-script = ExtResource("1_q4cki")
