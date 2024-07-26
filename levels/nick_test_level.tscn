@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://daphcewsawa6b"]
+[gd_scene load_steps=7 format=3 uid="uid://daphcewsawa6b"]
 
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_6olie"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_ka4b6"]
+[ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="4_sdhpw"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="5_g5n0g"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="6_8hyx4"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="7_183g3"]
 
 [node name="NickTestLevel" type="Node2D"]
 
@@ -14,3 +18,15 @@ layer_1/name = "default"
 layer_1/tile_data = PackedInt32Array(262130, 65547, 3, 262131, 65547, 3, 262132, 65547, 3, 262133, 65547, 3, 262134, 65547, 3, 262135, 65547, 3, 262136, 65547, 3, 262137, 65547, 3, 262138, 65547, 3, 262139, 65547, 3, 262140, 65547, 3, 262141, 65547, 3, 262142, 65547, 3, 262143, 65547, 3, 196608, 65547, 3, 196609, 65547, 3, 196610, 65547, 3, 196611, 65547, 3, 196612, 65547, 3, 196613, 65547, 3, 196614, 65547, 3, 196615, 65547, 3, 196616, 65547, 3, 196617, 65547, 3, 196618, 65547, 3, 196619, 65547, 3, 196620, 65547, 3, 196621, 65547, 3, 196622, 65547, 3, 196623, 65547, 3, 196624, 65547, 3, 131088, 65547, 3, 65552, 65547, 3, 16, 65547, 3, -65520, 65547, 3, -131056, 65547, 3, -196592, 65547, 3, 196594, 65547, 3, 131058, 65547, 3, 65522, 65547, 3, -14, 65547, 3, -65550, 65547, 3, -131086, 65547, 3, -65532, 11, 0, 4, 11, 1, 65540, 11, 2, -65531, 65547, 0, 5, 65547, 1, 65541, 65547, 2, -65530, 131083, 0, 6, 131083, 1, 65542, 131083, 2, 196603, 11, 0, 196604, 65547, 0, 196605, 131083, 0, 131059, 65547, 0, 196595, 65547, 1, 131060, 131083, 0, 196596, 131083, 1, -65527, 11, 0, -65525, 65547, 0, -65523, 131083, 0, 65545, 11, 1, 65547, 65547, 1, 65549, 131083, 1, 327689, 11, 2, 327691, 65547, 2, 327693, 131083, 2)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_ka4b6")]
+
+[node name="Collectable" parent="." instance=ExtResource("4_sdhpw")]
+position = Vector2(501, 585)
+item = ExtResource("5_g5n0g")
+
+[node name="Collectable2" parent="." instance=ExtResource("4_sdhpw")]
+position = Vector2(496, 338)
+item = ExtResource("6_8hyx4")
+
+[node name="Collectable3" parent="." instance=ExtResource("4_sdhpw")]
+position = Vector2(815, 594)
+item = ExtResource("7_183g3")

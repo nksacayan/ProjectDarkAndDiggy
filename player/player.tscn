@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c171cwpd7dwud" path="res://player/assets/sprites/dwarf-walk-2.png" id="4_beva2"]
 [ext_resource type="Script" path="res://player/PlayerAnimationHandler.gd" id="5_i0qo2"]
 [ext_resource type="PackedScene" uid="uid://82146sj7fcfh" path="res://common_components/health/health.tscn" id="5_lqeur"]
+[ext_resource type="PackedScene" uid="uid://di03pj8g1i5fn" path="res://prototype_ui/player_hud/player_hud.tscn" id="9_hi2fu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g28g1"]
 animations = [{
@@ -93,6 +94,8 @@ debug_color = Color(0, 1, 0.215686, 0.419608)
 unique_name_in_owner = true
 wait_time = 0.5
 one_shot = true
+
+[node name="PlayerHUD" parent="." instance=ExtResource("9_hi2fu")]
 
 [connection signal="jump_input" from="PlayerInput" to="." method="_on_player_input_jump_input"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

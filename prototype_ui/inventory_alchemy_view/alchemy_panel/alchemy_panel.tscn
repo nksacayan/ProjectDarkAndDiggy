@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://n5sh67t037gt"]
+
+[ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/alchemy_panel.gd" id="1_823b2"]
+[ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="1_bs51v"]
+
+[node name="AlchemyPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_823b2")
+item_card_scene = ExtResource("1_bs51v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Alchemy Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ingredient 1"
+horizontal_alignment = 1
+
+[node name="LeftIngredientPanel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Ingredient 2"
+horizontal_alignment = 1
+
+[node name="RightIngredientPanel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Result"
+horizontal_alignment = 1
+
+[node name="PotionPanel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Alchemy!"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

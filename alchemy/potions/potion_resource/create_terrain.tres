@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=3 format=3 uid="uid://bebybyrw03sh8"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="1_20eum"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="2_gwirn"]
+
+[resource]
+script = ExtResource("1_20eum")
+item_name = "create terrain"
+texture2d = ExtResource("2_gwirn")

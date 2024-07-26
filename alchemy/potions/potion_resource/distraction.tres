@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=3 format=3 uid="uid://cyjeqb3ctpiok"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="1_b2pju"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="2_4osxb"]
+
+[resource]
+script = ExtResource("1_b2pju")
+item_name = "distraction"
+texture2d = ExtResource("2_4osxb")

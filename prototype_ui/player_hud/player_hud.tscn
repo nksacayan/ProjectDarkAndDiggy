@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://di03pj8g1i5fn"]
+
+[ext_resource type="Script" path="res://prototype_ui/player_hud/player_hud.gd" id="1_288fp"]
+[ext_resource type="PackedScene" uid="uid://bhqna0nc53y4b" path="res://prototype_ui/player_hud/lives/lives_hud.tscn" id="2_xshgd"]
+[ext_resource type="PackedScene" uid="uid://cdtvh3fb8nebc" path="res://prototype_ui/player_hud/quickbar/quickbar.tscn" id="3_m74vd"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_288fp")
+
+[node name="LivesHud" parent="." instance=ExtResource("2_xshgd")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -392.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Quickbar" parent="." instance=ExtResource("3_m74vd")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+grow_horizontal = 1
+grow_vertical = 0

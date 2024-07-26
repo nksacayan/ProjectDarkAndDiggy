@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IngredientResource" load_steps=7 format=3 uid="uid://c8hp82agsjbik"]
+
+[ext_resource type="Resource" uid="uid://diu0prx3s43vt" path="res://alchemy/potions/potion_resource/heal.tres" id="1_jrqef"]
+[ext_resource type="Script" path="res://alchemy/ingredients/ingredient_resource.gd" id="1_kcgj3"]
+[ext_resource type="Texture2D" uid="uid://bv8rtktddqypa" path="res://art_dump/skull.png" id="2_tbdwt"]
+[ext_resource type="Resource" uid="uid://cyjeqb3ctpiok" path="res://alchemy/potions/potion_resource/distraction.tres" id="2_wcvd6"]
+[ext_resource type="Resource" uid="uid://dgrsc8unv6g1w" path="res://alchemy/potions/potion_resource/fly.tres" id="3_n7n6f"]
+[ext_resource type="Resource" uid="uid://dmg3qkyddiq1v" path="res://alchemy/potions/potion_resource/dirt_armor.tres" id="4_yy7ea"]
+
+[resource]
+script = ExtResource("1_kcgj3")
+combo_result = Array[Resource("res://alchemy/potions/potion_resource/potion_resource.gd")]([ExtResource("1_jrqef"), ExtResource("2_wcvd6"), ExtResource("3_n7n6f"), ExtResource("4_yy7ea")])
+item_name = "kobold ear"
+texture2d = ExtResource("2_tbdwt")

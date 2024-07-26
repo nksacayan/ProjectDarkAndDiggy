@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=3 format=3 uid="uid://br4k8bq1i5bi7"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="1_onago"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="2_xurlw"]
+
+[resource]
+script = ExtResource("1_onago")
+item_name = "smoke"
+texture2d = ExtResource("2_xurlw")
