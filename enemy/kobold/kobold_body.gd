@@ -2,10 +2,9 @@ extends CharacterBody2D
 class_name KoboldBody2D
 
 
-@onready var sprite2D : Sprite2D = %Sprite2D
 @onready var player_detect_cast : RayCast2D = %PlayerDetectionCast
 @onready var floor_detect_cast : RayCast2D = %FloorDetectionCast
-
+@onready var animation_handler: KoboldAnimationHandler = %AnimatedSprite2D as KoboldAnimationHandler
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -20,6 +19,10 @@ enum MovementModifier {
 }
 
 func _physics_process(delta):
+	apply_gravity(delta)
+	animation_handler.handle_animation(velocity)
+
+func apply_gravity(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += _gravity * delta
@@ -27,6 +30,4 @@ func _physics_process(delta):
 	velocity.y = velocity.y + _gravity * delta
 	
 	move_and_slide()
-
-
 

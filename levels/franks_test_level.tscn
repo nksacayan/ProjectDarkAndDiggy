@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmw0b6ciho6ao"]
+
+[ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_aaklv"]
+[ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_8g8lq"]
+[ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="3_mkd3o"]
+[ext_resource type="AudioStream" uid="uid://b2ad6nhkp8beo" path="res://Audio/The-Northern-Path Loop.mp3" id="4_oobjr"]
+
+[node name="FranksTestLevel" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_aaklv")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 65547, 1, 131069, 65547, 1, 196605, 65547, 1, 262141, 65547, 1, 327677, 65547, 1, 327678, 65547, 1, 327679, 65547, 1, 262144, 65547, 1, 262146, 65547, 1, 262145, 65547, 1, 262148, 65547, 1, 262149, 65547, 1, 262147, 65547, 1, 262150, 65547, 1, 262152, 65547, 1, 262154, 65547, 1, 262155, 65547, 1, 262153, 65547, 1, 262157, 65547, 1, 262158, 65547, 1, 262159, 65547, 1, 196623, 65547, 1, 131087, 65547, 1, 65551, 65547, 1, -65521, 65547, 1, 15, 65547, 1, 262151, 65547, 1, 262156, 65547, 1)
+metadata/_edit_lock_ = true
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_8g8lq")]
+position = Vector2(1012, 632)
+
+[node name="Health" parent="PlayerBody" index="5"]
+max_health = 5
+
+[node name="Kobold" parent="." instance=ExtResource("3_mkd3o")]
+position = Vector2(2632, 886)
+
+[node name="PatrolBoundLeft" parent="Kobold" index="2"]
+position = Vector2(1721, 914)
+
+[node name="PatrolBoundRight" parent="Kobold" index="3"]
+position = Vector2(3422, 910)
+
+[node name="PatrolBoundStart" parent="Kobold" index="4"]
+position = Vector2(2632, 886)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oobjr")
+volume_db = -20.0
+autoplay = true
+
+[editable path="PlayerBody"]
+[editable path="Kobold"]

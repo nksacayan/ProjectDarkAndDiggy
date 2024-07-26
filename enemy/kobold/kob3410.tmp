@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmmwqu3w11y2e"]
+
+[ext_resource type="Script" path="res://enemy/kobold/kobold_body.gd" id="1_g7ieu"]
+[ext_resource type="Texture2D" uid="uid://b4qab2hbgyba5" path="res://player/assets/sprites/dwarf-walk-1.png" id="2_hxmif"]
+[ext_resource type="Texture2D" uid="uid://ejra8v60l2ni" path="res://player/assets/sprites/dwarf-idle.png" id="2_tu02l"]
+[ext_resource type="Script" path="res://enemy/states/state_machine.gd" id="3_5jy2q"]
+[ext_resource type="Script" path="res://enemy/states/patrol_state.gd" id="4_2t6yl"]
+[ext_resource type="Texture2D" uid="uid://c171cwpd7dwud" path="res://player/assets/sprites/dwarf-walk-2.png" id="4_gucfu"]
+[ext_resource type="Script" path="res://enemy/kobold/KoboldAnimationHandler.gd" id="5_b012h"]
+[ext_resource type="Script" path="res://enemy/states/chase_state.gd" id="5_rrv1x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbeb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tu02l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hxmif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gucfu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2xkr"]
+radius = 80.0
+height = 258.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_db70v"]
+radius = 91.0
+height = 284.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8htu"]
+radius = 86.0
+height = 266.0
+
+[node name="Kobold" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_g7ieu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_cbeb6")
+animation = &"walk"
+offset = Vector2(48, 0)
+script = ExtResource("5_b012h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k2xkr")
+
+[node name="PatrolBoundLeft" type="Marker2D" parent="."]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(-174, 0)
+
+[node name="PatrolBoundRight" type="Marker2D" parent="."]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(184, 0)
+
+[node name="PatrolBoundStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+top_level = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("inital_state")]
+script = ExtResource("3_5jy2q")
+inital_state = NodePath("PatrolState")
+
+[node name="PatrolState" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_2t6yl")
+
+[node name="ChaseState" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_rrv1x")
+
+[node name="PlayerDetectionCast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(200, 0)
+collision_mask = 4
+
+[node name="FloorDetectionCast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(100, 140)
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(-1, 1)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_db70v")
+disabled = true
+debug_color = Color(0.882353, 0, 0.101961, 0.419608)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_r8htu")
+debug_color = Color(0, 1, 0, 0.419608)
+
+[connection signal="area_entered" from="Hitbox" to="StateMachine/ChaseState" method="_on_hitbox_area_entered"]
