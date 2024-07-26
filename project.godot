@@ -59,8 +59,11 @@ dig_down={
 
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Collectable"
-2d_physics/layer_3="Player"
-2d_physics/layer_4="Enemy"
+2d_physics/layer_3="Player Collison"
+2d_physics/layer_4="Enemy Collison"
+2d_physics/layer_5="Smoke"
+2d_physics/layer_6="Player Hurtbox"
+2d_physics/layer_7="Enemy Hurtbox"
 
 [rendering]
 

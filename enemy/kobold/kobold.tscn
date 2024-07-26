@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmmwqu3w11y2e"]
+[gd_scene load_steps=14 format=3 uid="uid://cmmwqu3w11y2e"]
 
 [ext_resource type="Script" path="res://enemy/kobold/kobold_body.gd" id="1_g7ieu"]
 [ext_resource type="Texture2D" uid="uid://dp4ol3g378kl2" path="res://enemy/kobold/assets/sprites/kobold-idle.png" id="2_fsdp0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bu4g3pnnt637e" path="res://enemy/kobold/assets/sprites/kobold-walk-2.png" id="4_dgtie"]
 [ext_resource type="Script" path="res://enemy/kobold/KoboldAnimationHandler.gd" id="5_b012h"]
 [ext_resource type="Script" path="res://enemy/states/chase_state.gd" id="5_rrv1x"]
+[ext_resource type="Script" path="res://enemy/states/return_state.gd" id="9_5xfb1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv8ve"]
 animations = [{
@@ -82,10 +83,20 @@ script = ExtResource("4_2t6yl")
 [node name="ChaseState" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_rrv1x")
 
+[node name="ReturnState" type="Node2D" parent="StateMachine"]
+script = ExtResource("9_5xfb1")
+
+[node name="LineOfSight" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 21
+hit_from_inside = true
+
 [node name="PlayerDetectionCast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
-target_position = Vector2(200, 0)
-collision_mask = 4
+target_position = Vector2(1033, 0)
+collision_mask = 20
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="FloorDetectionCast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
@@ -95,7 +106,7 @@ target_position = Vector2(100, 140)
 unique_name_in_owner = true
 scale = Vector2(-1, 1)
 collision_layer = 0
-collision_mask = 4
+collision_mask = 32
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
@@ -104,7 +115,7 @@ disabled = true
 debug_color = Color(0.882353, 0, 0.101961, 0.419608)
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 64
 collision_mask = 0
 monitoring = false
 
