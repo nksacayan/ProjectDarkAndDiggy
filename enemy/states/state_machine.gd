@@ -1,3 +1,4 @@
+class_name StateMachine
 extends Node
 
 @export var inital_state : State

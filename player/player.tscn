@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cd6ndg0vgc407"]
+[gd_scene load_steps=13 format=3 uid="uid://cd6ndg0vgc407"]
 
 [ext_resource type="Script" path="res://player/player_body.gd" id="1_eeh5k"]
 [ext_resource type="Texture2D" uid="uid://ejra8v60l2ni" path="res://player/assets/sprites/dwarf-idle.png" id="2_oify2"]
@@ -35,10 +35,18 @@ animations = [{
 radius = 64.0
 height = 250.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anxnw"]
+radius = 83.0
+height = 288.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6117p"]
+radius = 77.0
+height = 270.0
+
 [node name="PlayerBody" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(1, -13)
 collision_layer = 4
 script = ExtResource("1_eeh5k")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -63,4 +71,28 @@ unique_name_in_owner = true
 [node name="Health" parent="." instance=ExtResource("5_lqeur")]
 unique_name_in_owner = true
 
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_anxnw")
+debug_color = Color(0.992157, 0, 0, 0.419608)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_6117p")
+debug_color = Color(0, 1, 0.215686, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
 [connection signal="jump_input" from="PlayerInput" to="." method="_on_player_input_jump_input"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

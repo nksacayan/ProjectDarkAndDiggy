@@ -1,7 +1,7 @@
 extends State
 class_name PatrolState
 
-@export var enemy: KoboldBody2D
+var enemy: KoboldBody2D
 #Marker2D for Patrol Bounds and Start position
 @onready var pb_right : Marker2D = %PatrolBoundRight
 @onready var pb_left : Marker2D = %PatrolBoundLeft
@@ -11,6 +11,9 @@ var floor_cast_ready : bool = false
 const _MOVE_SPEED : float = 250.0
 const _DETECT_RANGE : float = 250.0
 
+func enter():
+	enemy = get_parent().get_parent()
+	
 func physics_update(_delta:float):
 	if !enemy:
 		print("Error No Enemy Unit for Physics")
@@ -70,11 +73,11 @@ func _flip_direction():
 	enemy.move_mod = enemy.MovementModifier.CENTER #pauses movement
 	await get_tree().create_timer(2).timeout #Duration of paused movement
 	
-	enemy.sprite2D.flip_h = not enemy.sprite2D.flip_h #flips Sprite
-	enemy.move_mod = prev_move * -1 #flips movement direction
-	enemy.player_detect_cast.target_position = \
-		Vector2(_DETECT_RANGE * enemy.move_mod,0) #Flips Raycast
-	enemy.floor_detect_cast.move_local_x(225 * enemy.move_mod)
+	#Flips the sprite, walking direction, 
+	#player detection raycast, and floor detection raycast
+	enemy.move_mod = prev_move * -1
+	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1)
+	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1) 
 	
 	
 
