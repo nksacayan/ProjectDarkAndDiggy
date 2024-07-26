@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw01wor01yhan"]
+
+[ext_resource type="Script" path="res://alchemy/ingredients/ingredient_master_autoload/ingredient_master.gd" id="1_5vq3m"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="2_6lbst"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="3_qrd5c"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="4_ntide"]
+[ext_resource type="Resource" uid="uid://cjje472qn11dq" path="res://alchemy/ingredients/special_dirt.tres" id="5_hep8m"]
+
+[node name="IngredientMaster" type="Node"]
+script = ExtResource("1_5vq3m")
+ingredient_master_list = Array[Resource("res://alchemy/ingredients/ingredient_resource.gd")]([ExtResource("4_ntide"), ExtResource("3_qrd5c"), ExtResource("2_6lbst"), ExtResource("5_hep8m")])

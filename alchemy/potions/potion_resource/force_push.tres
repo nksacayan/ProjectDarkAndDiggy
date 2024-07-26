@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=3 format=3 uid="uid://8w4ey4lw2vx1"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="1_im47b"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="2_8g67x"]
+
+[resource]
+script = ExtResource("1_im47b")
+item_name = "force push"
+texture2d = ExtResource("2_8g67x")

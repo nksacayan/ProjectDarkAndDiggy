@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IngredientResource" load_steps=7 format=3 uid="uid://itiy5w252ilc"]
+
+[ext_resource type="Script" path="res://alchemy/ingredients/ingredient_resource.gd" id="1_h22o4"]
+[ext_resource type="Resource" uid="uid://dgrsc8unv6g1w" path="res://alchemy/potions/potion_resource/fly.tres" id="1_rnxbs"]
+[ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/bomb.tres" id="2_1edbg"]
+[ext_resource type="Texture2D" uid="uid://dm65ies73dxbs" path="res://art_dump/rhombus_question.png" id="2_csoph"]
+[ext_resource type="Resource" uid="uid://br4k8bq1i5bi7" path="res://alchemy/potions/potion_resource/smoke.tres" id="3_08nh6"]
+[ext_resource type="Resource" uid="uid://8w4ey4lw2vx1" path="res://alchemy/potions/potion_resource/force_push.tres" id="4_kqvjd"]
+
+[resource]
+script = ExtResource("1_h22o4")
+combo_result = Array[Resource("res://alchemy/potions/potion_resource/potion_resource.gd")]([ExtResource("1_rnxbs"), ExtResource("2_1edbg"), ExtResource("3_08nh6"), ExtResource("4_kqvjd")])
+item_name = "black powder"
+texture2d = ExtResource("2_csoph")

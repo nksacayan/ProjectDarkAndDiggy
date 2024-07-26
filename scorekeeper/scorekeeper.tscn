@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3wg11bovesgj"]
 
-[ext_resource type="Script" path="res://autoloads/scorekeeper/scorekeeper.gd" id="1_jfxkq"]
+[ext_resource type="Script" path="res://scorekeeper/scorekeeper.gd" id="1_jfxkq"]
 
 [node name="Scorekeeper" type="Node"]
 script = ExtResource("1_jfxkq")
