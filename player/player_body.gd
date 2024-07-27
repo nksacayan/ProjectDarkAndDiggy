@@ -37,7 +37,6 @@ func _try_jump() -> void:
 #Stunned Movement when Hit by enemy unit
 func _stunned_movement(delta: float):
 	velocity = knockback_force * delta
-	knockback_force / _KNOCKBACK_DECAY
 	move_and_slide()
 
 func _do_movement(delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmmwqu3w11y2e"]
+[gd_scene load_steps=15 format=3 uid="uid://cmmwqu3w11y2e"]
 
 [ext_resource type="Script" path="res://enemy/kobold/kobold_body.gd" id="1_g7ieu"]
 [ext_resource type="Texture2D" uid="uid://dp4ol3g378kl2" path="res://enemy/kobold/assets/sprites/kobold-idle.png" id="2_fsdp0"]
@@ -36,11 +36,8 @@ animations = [{
 radius = 80.0
 height = 258.0
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3uiq3"]
-points = PackedVector2Array(0, 0, 5000, 1000, 5000, -1000)
-
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_bii2k"]
-points = PackedVector2Array(1000, -200, 1000, 200, 0, 0)
+points = PackedVector2Array(600, -200, 600, 200, 0, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_db70v"]
 radius = 91.0
@@ -51,7 +48,6 @@ radius = 86.0
 height = 266.0
 
 [node name="Kobold" type="CharacterBody2D"]
-position = Vector2(0, -1)
 collision_layer = 8
 script = ExtResource("1_g7ieu")
 
@@ -66,31 +62,6 @@ script = ExtResource("5_b012h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_k2xkr")
 
-[node name="LineOfSight" type="RayCast2D" parent="."]
-unique_name_in_owner = true
-collision_mask = 21
-hit_from_inside = true
-collide_with_areas = true
-
-[node name="FloorDetectionCast" type="RayCast2D" parent="."]
-unique_name_in_owner = true
-target_position = Vector2(100, 140)
-
-[node name="LightDetectionCast" type="ShapeCast2D" parent="."]
-unique_name_in_owner = true
-shape = SubResource("ConvexPolygonShape2D_3uiq3")
-target_position = Vector2(0, 0)
-collision_mask = 144
-collide_with_areas = true
-
-[node name="PlayerDetectionCast" type="ShapeCast2D" parent="."]
-unique_name_in_owner = true
-shape = SubResource("ConvexPolygonShape2D_bii2k")
-target_position = Vector2(0, 0)
-max_results = 1
-collision_mask = 20
-collide_with_areas = true
-
 [node name="PatrolBoundLeft" type="Marker2D" parent="."]
 unique_name_in_owner = true
 top_level = true
@@ -104,6 +75,36 @@ position = Vector2(184, 0)
 [node name="PatrolBoundStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
 top_level = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("inital_state")]
+script = ExtResource("3_5jy2q")
+inital_state = NodePath("PatrolState")
+
+[node name="PatrolState" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_2t6yl")
+
+[node name="ChaseState" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_rrv1x")
+
+[node name="ReturnState" type="Node2D" parent="StateMachine"]
+script = ExtResource("9_5xfb1")
+
+[node name="LineOfSight" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 21
+hit_from_inside = true
+
+[node name="PlayerDetectionCast" type="ShapeCast2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("ConvexPolygonShape2D_bii2k")
+target_position = Vector2(0, 0)
+max_results = 1
+collision_mask = 20
+collide_with_areas = true
+
+[node name="FloorDetectionCast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(100, 140)
 
 [node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -125,18 +126,5 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_r8htu")
 debug_color = Color(0, 1, 0, 0.419608)
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("inital_state")]
-script = ExtResource("3_5jy2q")
-inital_state = NodePath("PatrolState")
-
-[node name="PatrolState" type="Node2D" parent="StateMachine"]
-script = ExtResource("4_2t6yl")
-
-[node name="ChaseState" type="Node2D" parent="StateMachine"]
-script = ExtResource("5_rrv1x")
-
-[node name="ReturnState" type="Node2D" parent="StateMachine"]
-script = ExtResource("9_5xfb1")
 
 [connection signal="area_entered" from="Hitbox" to="StateMachine/ChaseState" method="_on_hitbox_area_entered"]

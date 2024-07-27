@@ -4,7 +4,15 @@ class_name State
 
 signal transitioned
 
-func enter():
+#Marker2D for Patrol Bounds and Start position
+@onready var pb_right : Marker2D = %PatrolBoundRight
+@onready var pb_left : Marker2D = %PatrolBoundLeft
+@onready var pb_start : Marker2D = %PatrolBoundStart
+@onready var enemy : KoboldBody2D =  get_parent().get_parent()
+@onready var hitbox : Area2D = %Hitbox
+@onready var los : RayCast2D = %LineOfSight
+
+func enter(_player:PlayerBody):
 	pass
 	
 func exit():

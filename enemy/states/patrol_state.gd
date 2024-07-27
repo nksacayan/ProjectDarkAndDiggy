@@ -1,43 +1,76 @@
 extends State
 class_name PatrolState
 
-var enemy: KoboldBody2D
-#Marker2D for Patrol Bounds and Start position
-@onready var pb_right : Marker2D = %PatrolBoundRight
-@onready var pb_left : Marker2D = %PatrolBoundLeft
 
-
+const _LIGHT_COLLISON_LAYER : int = 8
+const _SMOKE_COLLISON_LAYER : int = 5
 
 const _MOVE_SPEED : float = 20000.0
 const _DETECT_RANGE : float = 250.0
 
-func enter():
+var player : PlayerBody
+
+func enter(_player:PlayerBody):
 	print("Entering Patrol State")
 	enemy = get_parent().get_parent()
 
+
 func exit():
 	print("leaving Patrol State")
+	player = null
 
 func physics_update(_delta:float):
 	if !enemy:
 		print("Error No Enemy Unit for Physics")
 		return 0
-	
-
-	check_player() 
+	check_player()
+	check_player_far()
 	check_bounds()
 	enemy.velocity.x = _MOVE_SPEED * enemy.move_mod * _delta
 
+func check_player_far() -> void :
+	if !enemy.light_detect_cast.is_colliding():
+		return 
+
+	for collision in enemy.light_detect_cast.collision_result:
+		print(collision.get("collider"))
+		var area : Area2D = collision.get("collider")
+		
+		#smoke detection
+		if area.get_collision_layer_value(_SMOKE_COLLISON_LAYER):
+			print ("SMOKE")
+			return 
+
+		#light detection
+		if area.get_collision_layer_value(_LIGHT_COLLISON_LAYER):
+
+			if !area.has_overlapping_bodies():
+				return
+				
+			if player == null:
+				player = area.get_overlapping_bodies()[0]
+			
+			if(_check_los()):
+				print("los pass")
+				transition_chase()
+			else: 
+				print("los Fail")
 
 #checks for player in range using raycast
 func check_player():
 	if enemy.player_detect_cast.is_colliding():
-		print(enemy.player_detect_cast.get_collider())
-		if enemy.player_detect_cast.get_collider() is PlayerBody :
-			print("Player detected. Switching to chase state")
-			transitioned.emit(self, "ChaseState")
+		if enemy.player_detect_cast.get_collider(0) is PlayerBody :
+			if player == null:
+				player = enemy.player_detect_cast.get_collider(0)
+			transition_chase()
 
-
+func transition_chase():
+	print("Player detected. Switching to chase state")
+	transitioned.emit(self, "ChaseState", player)
+	
+func _check_los() -> bool:
+	los.target_position = los.to_local(player.global_position)
+	return (los.get_collider() is PlayerBody)
 
 #check if unit has read its patrol bound 
 #if so, flips direction
@@ -52,8 +85,6 @@ func check_bounds():
 
 
 
-
-
 func _flip_direction(): 
 	var prev_move = enemy.move_mod
 	enemy.move_mod = enemy.MovementModifier.CENTER #pauses movement
@@ -61,9 +92,10 @@ func _flip_direction():
 	
 	#Flips the sprite, walking direction, 
 	#player detection raycast, and floor detection raycast
-	enemy.move_mod = prev_move * -1
+	enemy.move_mod = ( prev_move * -1 ) as KoboldBody2D.MovementModifier
 	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1)
 	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1) 
+	enemy.light_detect_cast.scale = Vector2(enemy.move_mod, 1) 
 	
 	
 

@@ -2,9 +2,11 @@ extends CharacterBody2D
 class_name KoboldBody2D
 
 const _JUMP_FORCE: float = -1000.0
-@onready var player_detect_cast : RayCast2D = %PlayerDetectionCast
+@onready var player_detect_cast : ShapeCast2D = %PlayerDetectionCast
 @onready var floor_detect_cast : RayCast2D = %FloorDetectionCast
-@onready var animation_handler: KoboldAnimationHandler = %AnimatedSprite2D as KoboldAnimationHandler
+@onready var light_detect_cast : ShapeCast2D = %LightDetectionCast
+@onready var animation_handler: KoboldAnimationHandler = \
+	%AnimatedSprite2D as KoboldAnimationHandler
 var floor_cast_ready : bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -12,6 +14,7 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 #Used to transform Velocity of movement
 var move_mod : MovementModifier = MovementModifier.RIGHT
+
 enum MovementModifier {
 	LEFT = -1,
 	CENTER = 0,
@@ -22,11 +25,14 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	animation_handler.handle_animation(velocity)
 	
+	_update_los()
 	check_floor()
 	if is_on_wall():
 		_try_jump()
 	move_and_slide()
-	
+
+func _update_los():
+	pass
 
 func check_floor():
 	

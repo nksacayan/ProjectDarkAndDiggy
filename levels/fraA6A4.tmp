@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmw0b6ciho6ao"]
+
+[ext_resource type="PackedScene" uid="uid://bc3artbbj0ato" path="res://objects/smoke/smoke.tscn" id="1_2h4y5"]
+[ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_aaklv"]
+[ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_8g8lq"]
+[ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="3_mkd3o"]
+[ext_resource type="AudioStream" uid="uid://b2ad6nhkp8beo" path="res://Audio/The-Northern-Path Loop.mp3" id="4_oobjr"]
+
+[node name="FranksTestLevel" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Smoke" parent="." instance=ExtResource("1_2h4y5")]
+position = Vector2(1284, 741)
+
+[node name="CollisionShape2D" parent="Smoke" index="0"]
+position = Vector2(761, -852)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_aaklv")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 65547, 1, 131069, 65547, 1, 196605, 65547, 1, 262141, 65547, 1, 327677, 65547, 1, 327678, 65547, 1, 327679, 65547, 1, 262144, 65547, 1, 262146, 65547, 1, 262145, 65547, 1, 262148, 65547, 1, 262149, 65547, 1, 262147, 65547, 1, 262150, 65547, 1, 262152, 65547, 1, 262153, 65547, 1, 262154, 65547, 1, 262158, 65547, 1, 262159, 65547, 1, 262160, 65547, 1, 327696, 65547, 1, 327697, 65547, 1, 262161, 65547, 1, 327690, 65547, 1, 327694, 65547, 1, 327695, 65547, 1, 327698, 65547, 1, 262162, 65547, 1, 196626, 65547, 1, 131090, 65547, 1, 65554, 65547, 1, 18, 65547, 1, -65518, 65547, 1, -131054, 65547, 1, -131053, 65547, 1, -196589, 65547, 1, -262125, 65547, 1, 327691, 65547, 1, 327692, 65547, 1, 262156, 65547, 1, 262157, 65547, 1, 327693, 65547, 1, 262151, 65547, 1, 196610, 65547, 1, 196611, 65547, 1, 131074, 65547, 1, 131073, 65547, 1, 196609, 65547, 1, 196608, 65547, 1, 262155, 65547, 1)
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_8g8lq")]
+position = Vector2(1012, 632)
+
+[node name="Health" parent="PlayerBody" index="5"]
+max_health = 5
+
+[node name="Kobold" parent="." instance=ExtResource("3_mkd3o")]
+position = Vector2(2266, 867)
+
+[node name="PatrolBoundLeft" parent="Kobold" index="2"]
+position = Vector2(1566, 922)
+
+[node name="PatrolBoundRight" parent="Kobold" index="3"]
+position = Vector2(3396, 883)
+
+[node name="PatrolBoundStart" parent="Kobold" index="4"]
+position = Vector2(2632, 886)
+
+[node name="LineOfSight" parent="Kobold" index="6"]
+collide_with_areas = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oobjr")
+volume_db = -20.0
+autoplay = true
+
+[editable path="Smoke"]
+[editable path="PlayerBody"]
+[editable path="Kobold"]
