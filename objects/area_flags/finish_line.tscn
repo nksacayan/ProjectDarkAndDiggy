@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://by7jfbituop2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi3tn"]
+size = Vector2(617, 302)
+
+[node name="FinishLine" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yi3tn")
