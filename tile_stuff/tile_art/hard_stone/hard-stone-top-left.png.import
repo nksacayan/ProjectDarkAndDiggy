@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwg0h8dh8qcp3"
-path="res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"
+uid="uid://8a8l3n2uv214"
+path="res://.godot/imported/hard-stone-top-left.png-8c86dc9820deed0e09412c7cb7aae071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/sprites/dwarf-walk-2.png"
-dest_files=["res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"]
+source_file="res://tile_stuff/tile_art/hard_stone/hard-stone-top-left.png"
+dest_files=["res://.godot/imported/hard-stone-top-left.png-8c86dc9820deed0e09412c7cb7aae071.ctex"]
 
 [params]
 

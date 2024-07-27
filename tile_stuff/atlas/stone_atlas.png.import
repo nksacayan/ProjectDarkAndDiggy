@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwg0h8dh8qcp3"
-path="res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"
+uid="uid://e1oi7xtt0pox"
+path="res://.godot/imported/stone_atlas.png-cc5026ee7e8460fccaab080332cc7b00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/sprites/dwarf-walk-2.png"
-dest_files=["res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"]
+source_file="res://tile_stuff/atlas/stone_atlas.png"
+dest_files=["res://.godot/imported/stone_atlas.png-cc5026ee7e8460fccaab080332cc7b00.ctex"]
 
 [params]
 

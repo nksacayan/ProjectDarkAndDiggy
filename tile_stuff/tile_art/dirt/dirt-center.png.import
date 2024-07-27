@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwg0h8dh8qcp3"
-path="res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"
+uid="uid://ctvavs0d0l2qe"
+path="res://.godot/imported/dirt-center.png-11578db45b1b9cc747be655c5eacba6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/sprites/dwarf-walk-2.png"
-dest_files=["res://.godot/imported/dwarf-walk-2.png-8063b8b1c6f7bd98180011b630fd6049.ctex"]
+source_file="res://tile_stuff/tile_art/dirt/dirt-center.png"
+dest_files=["res://.godot/imported/dirt-center.png-11578db45b1b9cc747be655c5eacba6d.ctex"]
 
 [params]
 
