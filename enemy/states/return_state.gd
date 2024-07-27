@@ -1,13 +1,10 @@
 extends State
 class_name ReturnState
 
-var enemy : KoboldBody2D
 const _MOVE_SPEED : float = 20000.0
 const _START_POS_BUFFER : float = 20
-@onready var pb_start : Marker2D = %PatrolBoundStart
-@onready var hitbox : Area2D = %Hitbox
 
-func enter():
+func enter(_player : PlayerBody):
 	print("Entering Return State")
 	enemy = get_parent().get_parent()
 	hitbox.get_child(0).disabled = true
@@ -22,7 +19,7 @@ func physics_update(_delta:float):
 		and enemy.global_position.x <= pb_start.global_position.x + _START_POS_BUFFER:
 			print(enemy.global_position.x)
 			print( pb_start.global_position.x)
-			transitioned.emit(self, "PatrolState")
+			transitioned.emit(self, "PatrolState", null)
 	
 
 func check_start_dir():
@@ -38,8 +35,9 @@ func _flip_direction():
 
 	#Flips the sprite, walking direction, 
 	#player detection raycast, and floor detection raycast
-	enemy.move_mod *= -1
+	enemy.move_mod = (enemy.move_mod * -1) as KoboldBody2D.MovementModifier
 	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1)
-	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1) 
+	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1)
+	enemy.light_detect_cast.scale = Vector2(enemy.move_mod , 1)
 	
 	
