@@ -39,7 +39,8 @@ func check_direction() -> void:
 
 func check_los() -> void:
 	los.target_position = los.to_local(target.global_position)
-	if !(los.get_collider() is PlayerBody):
+	if ! ( (los.get_collider() is PlayerBody) or \
+		 (los.get_collider() is Area2D)):
 		los_count += 1
 		if los_count == 60:
 			leave_state()

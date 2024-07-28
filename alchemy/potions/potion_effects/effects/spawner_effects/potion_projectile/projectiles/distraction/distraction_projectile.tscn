@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_i0ybj")
 texture = ExtResource("2_omi4o")
 
 [node name="DetectionShape" type="Area2D" parent="."]
-collision_layer = 512
+collision_layer = 516
 collision_mask = 0
 monitoring = false
 

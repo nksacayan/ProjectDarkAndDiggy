@@ -16,7 +16,7 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 var knockback_force : Vector2 = Vector2(0,0)
-var armor_flag : bool = true
+var armor_flag : bool = false
 
 
 func _ready():

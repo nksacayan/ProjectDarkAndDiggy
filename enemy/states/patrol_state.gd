@@ -4,6 +4,7 @@ class_name PatrolState
 
 const _LIGHT_COLLISON_LAYER : int = 8
 const _SMOKE_COLLISON_LAYER : int = 5
+const _DISTRACT_COLLISION_LAYER : int  = 10
 
 const _MOVE_SPEED : float = 20000.0
 const _DETECT_RANGE : float = 250.0
@@ -36,6 +37,12 @@ func check_player_far() -> void :
 		if area.get_collision_layer_value(_SMOKE_COLLISON_LAYER):
 			return 
 
+		if area.get_collision_layer_value(_DISTRACT_COLLISION_LAYER):
+			if target == null:
+				target = area
+			if(_check_los()):
+				transition_chase()
+			
 		#light detection
 		if area.get_collision_layer_value(_LIGHT_COLLISON_LAYER):
 
@@ -65,7 +72,8 @@ func transition_chase():
 	
 func _check_los() -> bool:
 	los.target_position = los.to_local(target.global_position)
-	return (los.get_collider() is PlayerBody)
+	return (los.get_collider() is PlayerBody) or \
+		(los.get_collider() is Area2D)
 
 #check if unit has read its patrol bound 
 #if so, flips direction
