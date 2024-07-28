@@ -1,24 +1,19 @@
 extends State
 class_name ReturnState
 
-const _MOVE_SPEED : float = 20000.0
+const _MOVE_SPEED : float = 60000.0
 const _START_POS_BUFFER : float = 20
 
-func enter(_player : PlayerBody):
-	print("Entering Return State")
+func enter(_player : Area2D):
 	enemy = get_parent().get_parent()
 	hitbox.get_child(0).disabled = true
 	check_start_dir()
 
-func exit():
-	print("Leaving Return State")
-		
+
+
 func physics_update(_delta:float):
-	enemy.velocity.x = _MOVE_SPEED * enemy.move_mod * _delta
 	if enemy.global_position.x >= pb_start.global_position.x - _START_POS_BUFFER \
 		and enemy.global_position.x <= pb_start.global_position.x + _START_POS_BUFFER:
-			print(enemy.global_position.x)
-			print( pb_start.global_position.x)
 			transitioned.emit(self, "PatrolState", null)
 	
 

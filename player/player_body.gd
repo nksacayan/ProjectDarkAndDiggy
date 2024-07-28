@@ -10,17 +10,20 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player_input: PlayerInput = %PlayerInput
 @onready var digger: Digger = %Digger
 @onready var health: Health = %Health
-@onready var animation_handler: PlayerAnimationHandler = %AnimatedSprite2D as PlayerAnimationHandler
-@onready var timer : Timer = %Timer
-const _KNOCKBACK_DECAY : float = 100
+@onready var animation_handler: PlayerAnimationHandler = \
+	%AnimatedSprite2D as PlayerAnimationHandler
+@onready var stun_timer : Timer = %StunTimer
+
+
 var knockback_force : Vector2 = Vector2(0,0)
+var armor_flag : bool = true
 
 
 func _ready():
 	health.current_health = health.max_health
 
 func _physics_process(delta: float) -> void:
-	if timer.is_stopped():
+	if stun_timer.is_stopped():
 		_do_movement(delta)
 	else:
 		_stunned_movement(delta)
@@ -54,13 +57,18 @@ func _try_digging() -> void:
 	digger.dig_in_direction(player_input.dig_direction)
 
 func _check_target(area) -> void:
-	var temp : StateMachine = area.get_parent().get_node("StateMachine")
-	if temp.current_state.name == "ChaseState":
-			print("Target not in Patrol State: currently in ", temp.current_state.name)
+	var enemy :KoboldBody2D = area.get_parent()
+	var sm : StateMachine = enemy.get_node("StateMachine")
+	if sm.current_state.name == "ChaseState":
+		if !armor_flag:
+			print_debug("No Armor + Attacking Enemy in: ", sm.current_state.name)
 			return
-	print(temp.current_state.name)
-	temp.get_parent().queue_free()
-	
+		else:
+			armor_flag = false	
+	enemy.queue_free()
+
 func _on_hitbox_area_entered(area) -> void:
 	_check_target(area)
 
+func _on_stun_timer_timeout():
+	knockback_force = Vector2(0,0) # Reset Knockback Force

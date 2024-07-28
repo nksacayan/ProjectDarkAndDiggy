@@ -12,6 +12,7 @@ func _ready():
 			states[child.name.to_lower()] = child
 			child.transitioned.connect(on_child_transition)
 	if inital_state:
+		print_debug("Inital State Loaded: ", inital_state.name)
 		inital_state.enter(null)
 		current_state = inital_state
 
@@ -32,7 +33,9 @@ func on_child_transition(state, new_state_name, args):
 		return
 	
 	if current_state:
+		print_debug("Leaving State: ", current_state.name)
 		current_state.exit()
 	
+	print_debug("Entering State: ", new_state.name)
 	new_state.enter(args)
 	current_state = new_state

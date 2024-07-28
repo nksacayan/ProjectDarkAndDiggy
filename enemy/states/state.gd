@@ -4,7 +4,7 @@ class_name State
 
 signal transitioned
 
-#Marker2D for Patrol Bounds and Start position
+#Thats allot of onReadys but we need 'em
 @onready var pb_right : Marker2D = %PatrolBoundRight
 @onready var pb_left : Marker2D = %PatrolBoundLeft
 @onready var pb_start : Marker2D = %PatrolBoundStart
@@ -15,16 +15,17 @@ signal transitioned
 const LIGHTBEAM_SCALE_X : float = 1.5
 const LIGHTBEAM_SCALE_Y : float = 4
 
-func enter(_player:PlayerBody):
+
+func enter(_target) -> void:
 	pass
 	
-func exit():
+func exit() -> void:
 	pass
 	
-func update(_delta:float):
+func update(_delta:float) -> void:
 	pass
 	
-func physics_update(_delta:float):
+func physics_update(_delta:float) -> void:
 	pass
 
 
