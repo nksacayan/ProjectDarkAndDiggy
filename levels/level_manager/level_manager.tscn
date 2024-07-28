@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnd65v5eyfwc4"]
 
 [ext_resource type="Script" path="res://levels/level_manager/level_manager.gd" id="1_tfgg6"]
-[ext_resource type="PackedScene" uid="uid://daphcewsawa6b" path="res://levels/nick_test_level.tscn" id="2_qp54o"]
-[ext_resource type="PackedScene" uid="uid://bmw0b6ciho6ao" path="res://levels/franks_test_level.tscn" id="3_nwrri"]
+[ext_resource type="PackedScene" uid="uid://cuv6opd7uqiqb" path="res://levels/level_1.tscn" id="2_6puk1"]
+[ext_resource type="PackedScene" uid="uid://bher1ak5mo5g5" path="res://levels/level_tutorial.tscn" id="2_ho8t1"]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_tfgg6")
-level_list = Array[PackedScene]([ExtResource("3_nwrri"), ExtResource("2_qp54o"), ExtResource("3_nwrri")])
+level_list = Array[PackedScene]([ExtResource("2_ho8t1"), ExtResource("2_6puk1")])

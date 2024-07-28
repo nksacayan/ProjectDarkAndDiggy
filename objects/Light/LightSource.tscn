@@ -1,11 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw1gwc75mhp6q"]
+[gd_scene load_steps=9 format=3 uid="uid://dw1gwc75mhp6q"]
+
+[ext_resource type="Texture2D" uid="uid://b1aswktjitt6b" path="res://objects/light/assets/torch-fire-1.png" id="1_aqbo8"]
+[ext_resource type="Script" path="res://objects/light/LightSource.gd" id="1_teuee"]
+[ext_resource type="Texture2D" uid="uid://djhhwwgtgbvcq" path="res://objects/light/assets/torch-fire-2.png" id="2_auase"]
+[ext_resource type="Texture2D" uid="uid://c8utt0hr5x8gl" path="res://objects/light/assets/torch-fire-3.png" id="3_v2tbt"]
+[ext_resource type="Texture2D" uid="uid://11h8hg7rfgwv" path="res://objects/light/assets/torch-fire-4.png" id="4_nw46w"]
+[ext_resource type="Texture2D" uid="uid://bjwrrsvl7fuin" path="res://objects/light/assets/circular-light.png" id="5_sglx6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83xd4"]
-radius = 202.267
+radius = 532.621
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vnnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aqbo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_auase")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v2tbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nw46w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LightSource" type="Area2D"]
 collision_layer = 128
 collision_mask = 4
+script = ExtResource("1_teuee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_83xd4")
+debug_color = Color(0.582555, 0.550964, 1.15514e-06, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(-7.62939e-06, -6.00002)
+scale = Vector2(4.50684, 4.50684)
+texture = ExtResource("5_sglx6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_6vnnq")

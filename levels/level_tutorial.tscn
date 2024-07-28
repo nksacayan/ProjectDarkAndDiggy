@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bher1ak5mo5g5"]
+
+[ext_resource type="Script" path="res://levels/level_transition.gd" id="1_wqq6w"]
+[ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_0hqhn"]
+[ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="2_e3ywq"]
+[ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="2_mrdph"]
+[ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="3_bsj7s"]
+[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/light/LightSource.tscn" id="6_loscg"]
+
+[node name="LevelTutorial" type="Node2D"]
+script = ExtResource("1_wqq6w")
+
+[node name="Kobold" parent="." instance=ExtResource("2_e3ywq")]
+position = Vector2(1355, -416)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PatrolBoundLeft" parent="Kobold" index="6"]
+position = Vector2(1236, -382)
+
+[node name="PatrolBoundRight" parent="Kobold" index="7"]
+position = Vector2(3285, -637)
+
+[node name="PatrolBoundStart" parent="Kobold" index="8"]
+position = Vector2(1410, -382)
+
+[node name="PatrolState" parent="Kobold/StateMachine" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="ChaseState" parent="Kobold/StateMachine" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="ReturnState" parent="Kobold/StateMachine" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_0hqhn")]
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_mrdph")
+format = 2
+layer_0/name = "background"
+layer_1/name = "gameplay"
+layer_1/tile_data = PackedInt32Array(-393223, 65569, 1, -327687, 65569, 1, -262151, 65569, 1, -196615, 65569, 1, -131079, 65569, 1, -65543, 65569, 1, -7, 65569, 1, 65529, 65569, 1, 131065, 65569, 1, 131066, 65569, 1, 131067, 65569, 1, 131068, 65569, 1, 131069, 65569, 1, 131070, 65569, 1, 131071, 65569, 1, 65536, 65569, 1, 65537, 65569, 1, 65538, 65569, 1, 65539, 65569, 1, 65540, 65569, 1, 65541, 65569, 1, 65542, 65569, 1, 65543, 65569, 1, 65544, 65569, 1, 65545, 65569, 1, 65546, 65569, 1, 65547, 65569, 1, 65548, 65569, 1, 65549, 65569, 1, 65550, 65569, 1, 65551, 65569, 1, 65552, 65569, 1, 65553, 65569, 1, 65554, 65569, 1, 65555, 65569, 1, 65556, 65569, 1, 65557, 65569, 1, 65558, 65569, 1, 65559, 65569, 1, 65560, 65569, 1, 65561, 65569, 1, 65562, 65569, 1, 65563, 65569, 1, 65564, 65569, 1, 65565, 65569, 1, -65533, 33, 2, -65532, 65569, 2, -65531, 65569, 2, -65530, 65569, 2, -65529, 65569, 2, -65528, 65569, 2, -65527, 65569, 2, -65526, 65569, 2, -65524, 65569, 2, -65525, 65569, 2, -65523, 65569, 2, -65522, 131105, 2, -131065, 33, 0, -131064, 131105, 0, -131069, 33, 1, -196605, 33, 1, -262141, 33, 1, -327677, 33, 0, -327676, 65569, 0, -327675, 65569, 0, -327674, 65569, 0, -327673, 65569, 0, -327672, 65569, 0, -327671, 65569, 0, -327670, 65569, 0, -327669, 65569, 0, -327668, 65569, 0, -327667, 65569, 0, -327666, 131105, 0, -262130, 131105, 1, -196594, 131105, 1, -131058, 131105, 1, -131062, 33, 0, -131061, 65569, 0, -131060, 65569, 0, -131059, 65569, 0, -196589, 31, 0, -131053, 31, 1, -65517, 31, 1, 19, 31, 1, -196588, 65567, 0, -131052, 65567, 1, -65516, 65567, 1, 20, 65567, 1, -196587, 65567, 0, -131051, 65567, 1, -65515, 65567, 1, 21, 65567, 1, -196586, 65567, 0, -131050, 65567, 1, -65514, 65567, 1, 22, 65567, 1, -196585, 65567, 0, -131049, 65567, 1, -65513, 65567, 1, 23, 65567, 1, -196584, 131103, 0, -131048, 131103, 1, -65512, 131103, 1, 24, 131103, 1, 28, 32, 1, -65508, 32, 0, -65507, 131104, 0, 29, 131104, 1, 65566, 65569, 1, 65567, 65569, 1, 65568, 65569, 1, 65569, 65569, 1, 65570, 65569, 1, 65571, 65569, 1, 65572, 65569, 1, 65573, 65569, 1, 65574, 65569, 1, 65575, 65569, 1, -458759, 65569, 1, -458758, 65569, 1, -458757, 65569, 1, -458756, 65569, 1, -458755, 65569, 1, -458754, 65569, 1, -458753, 65569, 1, -524288, 65569, 1, -524287, 65569, 1, -524286, 65569, 1, -524285, 65569, 1, -524284, 65569, 1, -524283, 65569, 1, -524282, 65569, 1, -524281, 65569, 1, -524280, 65569, 1, -524279, 65569, 1, -524278, 65569, 1, -524277, 65569, 1, -524276, 65569, 1, -524275, 65569, 1, -524274, 65569, 1, -524273, 65569, 1, -524272, 65569, 1, -524271, 65569, 1, -524270, 65569, 1, -524269, 65569, 1, -524268, 65569, 1, -524267, 65569, 1, -524266, 65569, 1, -524265, 65569, 1, -524264, 65569, 1, -524263, 65569, 1, -524262, 65569, 1, -524261, 65569, 1, -524260, 65569, 1, -524259, 65569, 1, -524258, 65569, 1, -524257, 65569, 1, -524256, 65569, 1, -524255, 65569, 1, -524254, 65569, 1, -524253, 65569, 1, -524252, 65569, 1, -524251, 65569, 1, -524250, 65569, 1, -524249, 65569, 1, -524248, 65569, 1, -458712, 65569, 1, -393176, 65569, 1, -327640, 65569, 1, -262104, 65569, 1, -196568, 65569, 1, -131032, 65569, 1, -65496, 65569, 1, 40, 65569, 1, 65576, 65569, 1)
+
+[node name="FinishLine" parent="." instance=ExtResource("3_bsj7s")]
+position = Vector2(-1139, 27)
+
+[node name="LightSource" parent="." instance=ExtResource("6_loscg")]
+position = Vector2(392, 135)
+
+[connection signal="area_entered" from="FinishLine" to="." method="_on_finish_line_area_entered"]
+
+[editable path="Kobold"]

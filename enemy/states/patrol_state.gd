@@ -62,6 +62,8 @@ func check_player():
 		if enemy.player_detect_cast.get_collider(0) is PlayerBody :
 			if player == null:
 				player = enemy.player_detect_cast.get_collider(0)
+			if !_check_los():
+				return
 			transition_chase()
 
 func transition_chase():

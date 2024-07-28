@@ -53,14 +53,14 @@ func _do_movement(delta: float) -> void:
 func _try_digging() -> void:
 	digger.dig_in_direction(player_input.dig_direction)
 
-func _check_target(area):
+func _check_target(area) -> void:
 	var temp : StateMachine = area.get_parent().get_node("StateMachine")
-	if temp.current_state.name == "PatrolState":
-			print(temp.current_state.name)
-			temp.get_parent().queue_free()
-	else:
-		print("Target not in Patrol State: currently in ", temp.current_state.name)
+	if temp.current_state.name == "ChaseState":
+			print("Target not in Patrol State: currently in ", temp.current_state.name)
+			return
+	print(temp.current_state.name)
+	temp.get_parent().queue_free()
 	
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered(area) -> void:
 	_check_target(area)
 
