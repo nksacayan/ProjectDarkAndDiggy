@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=5 format=3 uid="uid://br4k8bq1i5bi7"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/spawner_effect.gd" id="1_ei83f"]
+[ext_resource type="PackedScene" uid="uid://darx3xvdumu5l" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/smoke/smoke_projectile.tscn" id="2_2sm1n"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="2_amapd"]
+[ext_resource type="Texture2D" uid="uid://dmvpf1q0hf4mu" path="res://alchemy/potions/potion_sprites/potions-smoke-bomb.png" id="3_6fjuq"]
+
+[resource]
+script = ExtResource("2_amapd")
+potion_effect = ExtResource("1_ei83f")
+vector = Vector2(2000, 0)
+projectile = ExtResource("2_2sm1n")
+item_name = "smoke"
+texture2d = ExtResource("3_6fjuq")

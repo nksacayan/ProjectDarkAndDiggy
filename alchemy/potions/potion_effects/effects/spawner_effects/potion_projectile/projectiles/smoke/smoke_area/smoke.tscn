@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc3artbbj0ato"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/smoke/smoke_area/smoke.gd" id="1_vxk08"]
+[ext_resource type="Texture2D" uid="uid://dm65ies73dxbs" path="res://art_dump/rhombus_question.png" id="1_wcufv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_snsae"]
+radius = 413.541
+
+[node name="Smoke" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_vxk08")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wcufv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_snsae")
+debug_color = Color(0.560291, 0.395595, 1, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

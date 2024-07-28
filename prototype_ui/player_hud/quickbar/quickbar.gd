@@ -8,6 +8,8 @@ var item_cards: Array[ItemCard]
 
 func _ready() -> void:
 	AutoloadQuickInventory.items_updated.connect(_update_item_cards)
+	_clear_item_cards()
+	_update_item_cards()
 
 func _update_item_cards() -> void:
 	_clear_item_cards()
@@ -29,5 +31,6 @@ func _on_item_clicked(p_item_card: ItemCard) -> void:
 		AutoloadQuickInventory.remove_from_inventory(item)
 	else:
 		# if inventory ui is closed, clicks use the item
-		print_debug("use item: " + item.item_name)
-		pass
+		var potion: PotionResource = item as PotionResource
+		if potion:
+			potion.use_potion()

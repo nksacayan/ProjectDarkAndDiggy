@@ -9,6 +9,8 @@ var item_cards: Array[ItemCard]
 
 func _ready() -> void:
 	AutoloadInventory.items_updated.connect(_update_item_cards)
+	_clear_item_cards()
+	_update_item_cards()
 
 func _update_item_cards() -> void:
 	_clear_item_cards()

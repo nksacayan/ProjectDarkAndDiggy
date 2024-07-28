@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=5 format=3 uid="uid://cyjeqb3ctpiok"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/spawner_effect.gd" id="1_otupc"]
+[ext_resource type="PackedScene" uid="uid://cxclra1vj2b2i" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/distraction/distraction_projectile.tscn" id="2_ok3ij"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="2_u638o"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_task7"]
+
+[resource]
+script = ExtResource("2_u638o")
+potion_effect = ExtResource("1_otupc")
+vector = Vector2(2500, -200)
+projectile = ExtResource("2_ok3ij")
+item_name = "distraction"
+texture2d = ExtResource("3_task7")

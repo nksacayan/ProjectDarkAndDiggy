@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PotionResource" load_steps=5 format=3 uid="uid://bebybyrw03sh8"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/spawner_effect.gd" id="1_ovyla"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="2_rh5cp"]
+[ext_resource type="PackedScene" uid="uid://copki6d21bj1q" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/terrain/terrain_projectile.tscn" id="2_ura4u"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_b3jiq"]
+
+[resource]
+script = ExtResource("2_rh5cp")
+potion_effect = ExtResource("1_ovyla")
+vector = Vector2(2000, 0)
+projectile = ExtResource("2_ura4u")
+item_name = "create terrain"
+texture2d = ExtResource("3_b3jiq")

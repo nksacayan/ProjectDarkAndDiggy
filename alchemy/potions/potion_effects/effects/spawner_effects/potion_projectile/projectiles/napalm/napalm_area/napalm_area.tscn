@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ddlcpau5u6o"]
+
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="1_bpcri"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/napalm/napalm_area/napalm_area.gd" id="1_yokn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awsh3"]
+size = Vector2(384, 128)
+
+[node name="NapalmArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 96
+monitorable = false
+script = ExtResource("1_yokn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 1)
+texture = ExtResource("1_bpcri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_awsh3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

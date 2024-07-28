@@ -13,8 +13,8 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation_handler: PlayerAnimationHandler = %AnimatedSprite2D as PlayerAnimationHandler
 @onready var timer : Timer = %Timer
 const _KNOCKBACK_DECAY : float = 100
-
 var knockback_force : Vector2 = Vector2(0,0)
+
 
 func _ready():
 	health.current_health = health.max_health

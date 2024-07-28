@@ -7,7 +7,7 @@ extends Node
 
 signal items_updated
 
-var items: Array[ItemResource]
+@export var items: Array[ItemResource]
 
 
 func add_to_inventory(p_item: ItemResource) -> void:

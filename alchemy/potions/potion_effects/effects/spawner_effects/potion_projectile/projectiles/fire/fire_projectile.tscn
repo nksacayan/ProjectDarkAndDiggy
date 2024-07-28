@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbn36f4u5t0t7"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/fire_projectile.gd" id="1_mrjy6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ihdvj"]
+bounce = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1yh3"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ybj"]
+
+[node name="FireProjectile" type="RigidBody2D"]
+collision_layer = 1024
+collision_mask = 13
+physics_material_override = SubResource("PhysicsMaterial_ihdvj")
+script = ExtResource("1_mrjy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_v1yh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 97
+monitorable = false
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_i0ybj")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

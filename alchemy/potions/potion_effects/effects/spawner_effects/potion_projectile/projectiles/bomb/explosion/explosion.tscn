@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://qv8c2aitufq0"]
+
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/bomb/explosion/explosion.gd" id="1_2eb3u"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="1_8oahg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j0ber"]
+radius = 384.0
+
+[node name="Explosion" type="Area2D"]
+collision_layer = 0
+collision_mask = 97
+script = ExtResource("1_2eb3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8oahg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j0ber")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

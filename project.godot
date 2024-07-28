@@ -89,6 +89,8 @@ test_key={
 2d_physics/layer_7="Enemy Hurtbox"
 2d_physics/layer_8="Light"
 2d_physics/layer_9="Flags"
+2d_physics/layer_10="Distraction"
+2d_physics/layer_11="Physics Items"
 
 [rendering]
 

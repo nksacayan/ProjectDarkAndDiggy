@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmw0b6ciho6ao"]
 
-[ext_resource type="PackedScene" uid="uid://bc3artbbj0ato" path="res://objects/smoke/smoke.tscn" id="1_2h4y5"]
-[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/light/LightSource.tscn" id="1_74iwc"]
+[ext_resource type="PackedScene" uid="uid://bc3artbbj0ato" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/smoke/smoke_area/smoke.tscn" id="1_2h4y5"]
+[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/Light/LightSource.tscn" id="1_74iwc"]
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_aaklv"]
 [ext_resource type="Script" path="res://levels/level_transition.gd" id="1_b31v0"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_8g8lq"]
