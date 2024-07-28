@@ -12,6 +12,9 @@ func _ready() -> void:
 func _get_player() -> PlayerBody:
 	var current_scene = get_tree().current_scene
 	await current_scene.ready
+	print_debug(current_scene.get_children())
+	if current_scene as LevelManager:
+		current_scene = current_scene.get_child(0)
 	return current_scene.find_child("PlayerBody")
 
 func add_to_inventory(p_item: ItemResource) -> void:

@@ -1,3 +1,4 @@
+class_name LevelManager
 extends Node
 
 @export var level_list: Array[PackedScene]
