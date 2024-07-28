@@ -33,12 +33,10 @@ func check_player_far() -> void :
 		return 
 
 	for collision in enemy.light_detect_cast.collision_result:
-		print(collision.get("collider"))
 		var area : Area2D = collision.get("collider")
 		
 		#smoke detection
 		if area.get_collision_layer_value(_SMOKE_COLLISON_LAYER):
-			print ("SMOKE")
 			return 
 
 		#light detection
@@ -51,10 +49,8 @@ func check_player_far() -> void :
 				player = area.get_overlapping_bodies()[0]
 			
 			if(_check_los()):
-				print("los pass")
 				transition_chase()
-			else: 
-				print("los Fail")
+
 
 #checks for player in range using raycast
 func check_player():
@@ -97,8 +93,6 @@ func _flip_direction():
 	enemy.move_mod = ( prev_move * -1 ) as KoboldBody2D.MovementModifier
 	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1)
 	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1) 
-	enemy.light_detect_cast.scale = Vector2(enemy.move_mod, 1) 
-	
-	
-
+	enemy.light_detect_cast.scale = Vector2(enemy.move_mod, 1)
+	light_beam.scale = Vector2(LIGHTBEAM_SCALE_X, enemy.move_mod * LIGHTBEAM_SCALE_Y)
 

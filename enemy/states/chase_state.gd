@@ -55,6 +55,7 @@ func flip_direction():
 	#this might not be needed anymore
 	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1) 
 	enemy.light_detect_cast.scale = Vector2(enemy.move_mod, 1) 
+	light_beam.scale = Vector2(LIGHTBEAM_SCALE_X, enemy.move_mod * LIGHTBEAM_SCALE_Y)
 
 
 #TODO - Damage Logic here

@@ -39,5 +39,6 @@ func _flip_direction():
 	enemy.player_detect_cast.scale = Vector2(enemy.move_mod, 1)
 	enemy.floor_detect_cast.scale = Vector2(enemy.move_mod, 1)
 	enemy.light_detect_cast.scale = Vector2(enemy.move_mod , 1)
+	light_beam.scale = Vector2(LIGHTBEAM_SCALE_X, enemy.move_mod * LIGHTBEAM_SCALE_Y)
 	
 	

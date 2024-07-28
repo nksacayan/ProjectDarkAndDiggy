@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmmwqu3w11y2e"]
+[gd_scene load_steps=17 format=3 uid="uid://cmmwqu3w11y2e"]
 
 [ext_resource type="Script" path="res://enemy/kobold/kobold_body.gd" id="1_g7ieu"]
 [ext_resource type="Texture2D" uid="uid://dp4ol3g378kl2" path="res://enemy/kobold/assets/sprites/kobold-idle.png" id="2_fsdp0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://enemy/kobold/KoboldAnimationHandler.gd" id="5_b012h"]
 [ext_resource type="Script" path="res://enemy/states/chase_state.gd" id="5_rrv1x"]
 [ext_resource type="Script" path="res://enemy/states/return_state.gd" id="9_5xfb1"]
+[ext_resource type="Texture2D" uid="uid://lwqkru1wyp3y" path="res://objects/light/assets/light-beam.png" id="10_0cv44"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv8ve"]
 animations = [{
@@ -78,6 +79,7 @@ target_position = Vector2(100, 140)
 
 [node name="LightDetectionCast" type="ShapeCast2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -65)
 shape = SubResource("ConvexPolygonShape2D_3uiq3")
 target_position = Vector2(0, 0)
 collision_mask = 144
@@ -85,6 +87,7 @@ collide_with_areas = true
 
 [node name="PlayerDetectionCast" type="ShapeCast2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -65)
 shape = SubResource("ConvexPolygonShape2D_bii2k")
 target_position = Vector2(0, 0)
 max_results = 1
@@ -138,5 +141,13 @@ script = ExtResource("5_rrv1x")
 
 [node name="ReturnState" type="Node2D" parent="StateMachine"]
 script = ExtResource("9_5xfb1")
+
+[node name="LightBeam" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.784314)
+rotation = 4.71239
+scale = Vector2(1.5, 4)
+texture = ExtResource("10_0cv44")
+offset = Vector2(45, 145)
 
 [connection signal="area_entered" from="Hitbox" to="StateMachine/ChaseState" method="_on_hitbox_area_entered"]

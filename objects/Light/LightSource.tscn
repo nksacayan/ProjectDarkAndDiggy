@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="LightSource" type="Area2D"]
@@ -39,13 +39,13 @@ script = ExtResource("1_teuee")
 shape = SubResource("CircleShape2D_83xd4")
 debug_color = Color(0.582555, 0.550964, 1.15514e-06, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.572549)
-position = Vector2(-7.62939e-06, -6.00002)
-scale = Vector2(4.50684, 4.50684)
-texture = ExtResource("5_sglx6")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6vnnq")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(4.29785, 4.29785)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_sglx6")
