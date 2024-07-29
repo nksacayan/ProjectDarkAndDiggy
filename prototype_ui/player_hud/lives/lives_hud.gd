@@ -8,7 +8,7 @@ var num_hearts: int = 3
 
 
 func _ready() -> void:
-	_setup_health_relationship()
+	await _setup_health_relationship()
 	_setup_hearts()
 
 func _setup_hearts() -> void:
