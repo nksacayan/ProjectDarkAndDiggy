@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal earth_armor_activated(p_activated: bool)
 
 const _MOVE_SPEED: float = 50000.0
-const _JUMP_FORCE: float = -1000.0
+const _JUMP_FORCE: float = -1100.0
 
 
 var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")

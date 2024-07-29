@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name KoboldBody2D
 
-const _JUMP_FORCE: float = -1000.0
+const _JUMP_FORCE: float = -1500.0
 @onready var stun_timer : Timer = %StunTimer
 @onready var state_mach : StateMachine = %StateMachine
 @onready var player_detect_cast : ShapeCast2D = %PlayerDetectionCast
