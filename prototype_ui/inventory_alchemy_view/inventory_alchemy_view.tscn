@@ -11,10 +11,10 @@ script = ExtResource("1_1ekm3")
 [node name="InventoryPanel" parent="." instance=ExtResource("1_b2kl7")]
 anchors_preset = 9
 anchor_right = 0.0
-offset_left = 144.0
-offset_top = 312.0
-offset_right = 856.0
-offset_bottom = -294.0
+offset_left = 176.0
+offset_top = 288.0
+offset_right = 808.0
+offset_bottom = -376.0
 grow_horizontal = 1
 
 [node name="AlchemyPanel" parent="." instance=ExtResource("3_06dwo")]
