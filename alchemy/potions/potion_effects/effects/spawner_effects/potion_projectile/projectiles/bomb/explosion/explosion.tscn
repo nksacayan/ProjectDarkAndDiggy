@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qv8c2aitufq0"]
 
 [ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/bomb/explosion/explosion.gd" id="1_2eb3u"]
-[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="1_8oahg"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/placeholder/icon.svg" id="1_8oahg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0ber"]
 radius = 384.0

@@ -1,5 +1,5 @@
 class_name AlchemyPanel
-extends PanelContainer
+extends VBoxContainer
 
 
 @export var item_card_scene: PackedScene
@@ -40,10 +40,8 @@ func _on_item_clicked(p_item_card: ItemCard) -> void:
 		AutoloadMixer.potion_result = null
 
 func _add_item_card(p_parent_panel: PanelContainer, p_ingredient: ItemResource) -> void:
-	if not p_ingredient:
-		return
-	
 	var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
-	item_card.item = p_ingredient
-	item_card.clicked.connect(_on_item_clicked)
+	if p_ingredient:
+		item_card.item = p_ingredient
+		item_card.clicked.connect(_on_item_clicked)
 	p_parent_panel.add_child(item_card)

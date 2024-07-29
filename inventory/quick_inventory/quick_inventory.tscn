@@ -4,4 +4,4 @@
 
 [node name="QuickInventory" type="Node"]
 script = ExtResource("1_gdtt7")
-max_quick_items = 6
+max_items = 6

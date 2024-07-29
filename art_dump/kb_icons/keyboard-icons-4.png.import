@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8rtktddqypa"
-path="res://.godot/imported/skull.png-d911d54cd507092778ce50ac9f4ec1dc.ctex"
+uid="uid://bcifbcuqn00vh"
+path="res://.godot/imported/keyboard-icons-4.png-eef75288547708265ec4a789ba3c7d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_dump/skull.png"
-dest_files=["res://.godot/imported/skull.png-d911d54cd507092778ce50ac9f4ec1dc.ctex"]
+source_file="res://art_dump/kb_icons/keyboard-icons-4.png"
+dest_files=["res://.godot/imported/keyboard-icons-4.png-eef75288547708265ec4a789ba3c7d5b.ctex"]
 
 [params]
 

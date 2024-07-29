@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/inventory_panel.gd" id="1_oxejc"]
 [ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="2_r3v3j"]
-[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_8u5yk"]
+[ext_resource type="Texture2D" uid="uid://k0pd82rx6qn5" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/inventory-icon.png" id="3_lyvny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl0nu"]
 
@@ -18,23 +18,30 @@ item_card_scene = ExtResource("2_r3v3j")
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("3_8u5yk")
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("3_lyvny")
 expand_mode = 1
 
 [node name="Spacer" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
+size_flags_stretch_ratio = 10.0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
+size_flags_stretch_ratio = 6.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dl0nu")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]

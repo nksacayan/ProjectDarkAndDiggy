@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://alchemy/ingredients/ingredient_resource.gd" id="1_h22o4"]
 [ext_resource type="Resource" uid="uid://dgrsc8unv6g1w" path="res://alchemy/potions/potion_resource/resources/high_jump.tres" id="1_rnxbs"]
 [ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="2_1edbg"]
-[ext_resource type="Texture2D" uid="uid://dm65ies73dxbs" path="res://art_dump/rhombus_question.png" id="2_csoph"]
+[ext_resource type="Texture2D" uid="uid://dm65ies73dxbs" path="res://art_dump/placeholder/rhombus_question.png" id="2_csoph"]
 [ext_resource type="Resource" uid="uid://br4k8bq1i5bi7" path="res://alchemy/potions/potion_resource/resources/smoke.tres" id="3_08nh6"]
 [ext_resource type="Resource" uid="uid://8w4ey4lw2vx1" path="res://alchemy/potions/potion_resource/resources/force_push.tres" id="4_kqvjd"]
 

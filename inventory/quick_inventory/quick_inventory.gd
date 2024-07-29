@@ -2,7 +2,6 @@ class_name QuickInventory
 extends Inventory
 
 var player: PlayerBody
-@export var max_quick_items: int
 
 func _ready() -> void:
 	player = await _get_player()
@@ -19,8 +18,7 @@ func _get_player() -> PlayerBody:
 	return current_scene.find_child("PlayerBody")
 
 func add_to_inventory(p_item: ItemResource) -> bool:
-	if items.size() < max_quick_items:
-		super.add_to_inventory(p_item)
+	if super.add_to_inventory(p_item):
 		var potion: PotionResource = p_item as PotionResource
 		if potion and player:
 			potion.player = player

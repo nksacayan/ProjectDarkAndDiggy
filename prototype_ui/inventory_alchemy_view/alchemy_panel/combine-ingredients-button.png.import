@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qvosrkto0i73"
-path="res://.godot/imported/shield.png-f5a31d49b0c2cfe04fe83c135b251160.ctex"
+uid="uid://bpk0y4r2o08jy"
+path="res://.godot/imported/combine-ingredients-button.png-d92f9207608f6d739d602e3607076c56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_dump/shield.png"
-dest_files=["res://.godot/imported/shield.png-f5a31d49b0c2cfe04fe83c135b251160.ctex"]
+source_file="res://prototype_ui/inventory_alchemy_view/alchemy_panel/combine-ingredients-button.png"
+dest_files=["res://.godot/imported/combine-ingredients-button.png-d92f9207608f6d739d602e3607076c56.ctex"]
 
 [params]
 
