@@ -22,6 +22,7 @@ AutoloadIngredientMaster="*res://alchemy/ingredients/ingredient_master_autoload/
 AutoloadMixer="*res://alchemy/mixer/mixer.tscn"
 AutoloadQuickInventory="*res://inventory/quick_inventory/quick_inventory.tscn"
 AutoloadInventoryAlchemyView="*res://prototype_ui/inventory_alchemy_view/inventory_alchemy_view.tscn"
+AutoloadAudioManager="*res://Audio/AudioManager.tscn"
 
 [display]
 

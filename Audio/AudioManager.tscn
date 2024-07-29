@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://b3rrmrbvxjgy3"]
+[gd_scene load_steps=4 format=3 uid="uid://b3rrmrbvxjgy3"]
+
+[ext_resource type="Script" path="res://Audio/AudioManager.gd" id="1_p3hat"]
+[ext_resource type="AudioStream" uid="uid://b2ad6nhkp8beo" path="res://Audio/The-Northern-Path Loop.mp3" id="2_a6pvr"]
+[ext_resource type="AudioStream" uid="uid://cq85pp32exad1" path="res://Audio/knife-stab.wav" id="3_2shiy"]
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_p3hat")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a6pvr")
+volume_db = -20.0
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2shiy")
+volume_db = 10.0

@@ -65,6 +65,7 @@ func _check_target(area) -> void:
 			return
 		else:
 			armor_flag = false	
+	AutoloadAudioManager.play_attack()
 	enemy.queue_free()
 
 func _on_hitbox_area_entered(area) -> void:
