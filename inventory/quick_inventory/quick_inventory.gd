@@ -4,10 +4,13 @@ extends Inventory
 var player: PlayerBody
 
 func _ready() -> void:
+	_setup_player()
+	_push_player_to_potions()
+
+func _setup_player() -> void:
 	player = await _get_player()
 	if not player:
 		push_warning("Quick inventory failed to get player")
-	_push_player_to_potions()
 
 func _get_player() -> PlayerBody:
 	var current_scene = get_tree().current_scene

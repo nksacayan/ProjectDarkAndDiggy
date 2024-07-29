@@ -3,6 +3,8 @@ extends VBoxContainer
 
 
 @export var item_card_scene: PackedScene
+@export var grey_theme: StyleBoxTexture
+@export var white_theme: StyleBoxTexture
 
 @onready var _left_ingredient_panel: PanelContainer = %LeftIngredientPanel
 @onready var _right_ingredient_panel: PanelContainer = %RightIngredientPanel
@@ -16,8 +18,8 @@ func _ready() -> void:
 func _update_ingredient_panels() -> void:
 	_clear_panel_children(_left_ingredient_panel)
 	_clear_panel_children(_right_ingredient_panel)
-	_add_item_card(_left_ingredient_panel, AutoloadMixer._left_ingredient)
-	_add_item_card(_right_ingredient_panel, AutoloadMixer._right_ingredient)
+	_add_item_card(_left_ingredient_panel, AutoloadMixer._left_ingredient, white_theme)
+	_add_item_card(_right_ingredient_panel, AutoloadMixer._right_ingredient, white_theme)
 
 func _clear_panel_children(p_panel_container: PanelContainer) -> void:
 	for items in p_panel_container.get_children():
@@ -25,7 +27,7 @@ func _clear_panel_children(p_panel_container: PanelContainer) -> void:
 
 func _update_potion_panel() -> void:
 	_clear_panel_children(_potion_panel)
-	_add_item_card(_potion_panel, AutoloadMixer.potion_result)
+	_add_item_card(_potion_panel, AutoloadMixer.potion_result, grey_theme)
 
 func _on_button_pressed() -> void:
 	AutoloadMixer.mix()
@@ -39,8 +41,10 @@ func _on_item_clicked(p_item_card: ItemCard) -> void:
 		AutoloadInventory.add_to_inventory(p_item_card.item)
 		AutoloadMixer.potion_result = null
 
-func _add_item_card(p_parent_panel: PanelContainer, p_ingredient: ItemResource) -> void:
+func _add_item_card(p_parent_panel: PanelContainer, p_ingredient: ItemResource, \
+	p_theme: StyleBoxTexture) -> void:
 	var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
+	item_card.add_theme_stylebox_override("panel", p_theme)
 	if p_ingredient:
 		item_card.item = p_ingredient
 		item_card.clicked.connect(_on_item_clicked)

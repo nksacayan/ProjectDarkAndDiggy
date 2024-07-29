@@ -1,6 +1,7 @@
 class_name LevelManager
 extends Node
 
+signal next_level_transitioned
 @export var main_menu: PackedScene
 @export var level_list: Array[PackedScene]
 var level_select : int = 0
@@ -18,6 +19,7 @@ func _deferred_transition_next_level():
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
 	add_child(level_list[level_select].instantiate())
 	level_select += 1
+	next_level_transitioned.emit()
 	
 func load_main() -> void:
 	if !main_menu:

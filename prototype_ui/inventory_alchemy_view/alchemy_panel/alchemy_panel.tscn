@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://n5sh67t037gt"]
+[gd_scene load_steps=12 format=3 uid="uid://n5sh67t037gt"]
 
 [ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/alchemy_panel.gd" id="1_823b2"]
 [ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="2_8n2op"]
 [ext_resource type="Texture2D" uid="uid://b2ryx5jgqcch" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/mixing-icon.png" id="2_8rvnw"]
 [ext_resource type="Texture2D" uid="uid://bdmkq0mkqd6va" path="res://prototype_ui/panel-container-off-white.png" id="3_7ncgu"]
+[ext_resource type="StyleBox" uid="uid://c3v1exjsyrkw" path="res://prototype_ui/panel_container_grey.tres" id="3_brax1"]
 [ext_resource type="Texture2D" uid="uid://bpk0y4r2o08jy" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/combine-ingredients-button.png" id="3_w3218"]
 [ext_resource type="Texture2D" uid="uid://6tqjb2a5i5n1" path="res://prototype_ui/panel-container-grey-dark.png" id="4_rbdjd"]
+[ext_resource type="StyleBox" uid="uid://tg546e5rlbgg" path="res://prototype_ui/panel_container_white.tres" id="4_s4le1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73x1h"]
 texture = ExtResource("3_7ncgu")
@@ -36,6 +38,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_823b2")
 item_card_scene = ExtResource("2_8n2op")
+grey_theme = ExtResource("3_brax1")
+white_theme = ExtResource("4_s4le1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2
