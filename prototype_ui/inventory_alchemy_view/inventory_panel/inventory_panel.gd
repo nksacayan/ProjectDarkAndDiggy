@@ -1,4 +1,4 @@
-extends PanelContainer
+extends VBoxContainer
 
 @export var item_card_scene: PackedScene
 
