@@ -16,15 +16,13 @@ script = ExtResource("1_oxejc")
 item_card_scene = ExtResource("2_r3v3j")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(126, 126)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_vertical = 3
 texture = ExtResource("3_8u5yk")
-expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dl0nu")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]

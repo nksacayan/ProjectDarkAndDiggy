@@ -12,8 +12,8 @@ script = ExtResource("1_1ekm3")
 anchors_preset = 9
 anchor_right = 0.0
 offset_left = 144.0
-offset_top = 200.0
-offset_right = 872.0
+offset_top = 312.0
+offset_right = 856.0
 offset_bottom = -294.0
 grow_horizontal = 1
 
