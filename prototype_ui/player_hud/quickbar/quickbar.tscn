@@ -16,3 +16,21 @@ item_card_scene = ExtResource("2_2oagx")
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
+
+[node name="ItemCard" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
+
+[node name="ItemCard2" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
+
+[node name="ItemCard3" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
+
+[node name="ItemCard4" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
+
+[node name="ItemCard5" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
+
+[node name="ItemCard6" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+layout_mode = 2
