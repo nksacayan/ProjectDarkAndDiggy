@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
-func _on_sokoktart_button_pressed():
+func _on_start_button_pressed():
 	get_parent().transistion_next_level()
 
 func _on_credits_button_pressed():
