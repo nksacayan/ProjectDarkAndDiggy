@@ -1,6 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://povjfshbrmp3"]
 
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_ej67m"]
+[ext_resource type="Script" path="res://levels/level_transition.gd" id="1_j2v6l"]
 [ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/Light/LightSource.tscn" id="2_4ii0l"]
 [ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="2_18wts"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_a6l0m"]
@@ -10,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="8_id3nu"]
 
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_p36og")
+script = ExtResource("1_j2v6l")
 metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
