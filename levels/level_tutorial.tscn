@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bher1ak5mo5g5"]
+[gd_scene load_steps=13 format=3 uid="uid://bher1ak5mo5g5"]
 
 [ext_resource type="Script" path="res://levels/level_transition.gd" id="1_wqq6w"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="2_0hqhn"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="8_nncr3"]
 [ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="9_00hch"]
 [ext_resource type="Resource" uid="uid://diu0prx3s43vt" path="res://alchemy/potions/potion_resource/resources/heal.tres" id="10_kjnck"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="11_q2wl4"]
+[ext_resource type="Resource" uid="uid://cyjeqb3ctpiok" path="res://alchemy/potions/potion_resource/resources/distraction.tres" id="12_dl3ln"]
 
 [node name="LevelTutorial" type="Node2D"]
 script = ExtResource("1_wqq6w")
@@ -131,17 +133,33 @@ metadata/_edit_lock_ = true
 position = Vector2(28231, 375)
 metadata/_edit_lock_ = true
 
-[node name="Collectable" parent="." instance=ExtResource("8_nncr3")]
+[node name="Ear" parent="." instance=ExtResource("8_nncr3")]
 position = Vector2(8831, -96)
 item = ExtResource("9_00hch")
 
-[node name="Collectable2" parent="." instance=ExtResource("8_nncr3")]
+[node name="Ear2" parent="." instance=ExtResource("8_nncr3")]
 position = Vector2(9060, -97)
 item = ExtResource("9_00hch")
 
-[node name="Collectable3" parent="." instance=ExtResource("8_nncr3")]
+[node name="HPPot" parent="." instance=ExtResource("8_nncr3")]
 position = Vector2(9307, -92)
 item = ExtResource("10_kjnck")
+
+[node name="Ear3" parent="." instance=ExtResource("8_nncr3")]
+position = Vector2(9866, -105)
+item = ExtResource("9_00hch")
+
+[node name="Ember" parent="." instance=ExtResource("8_nncr3")]
+position = Vector2(10125, -106)
+item = ExtResource("11_q2wl4")
+
+[node name="HPPot2" parent="." instance=ExtResource("8_nncr3")]
+position = Vector2(10363, -109)
+item = ExtResource("12_dl3ln")
+
+[node name="Ear4" parent="." instance=ExtResource("8_nncr3")]
+position = Vector2(10872, -93)
+item = ExtResource("9_00hch")
 
 [connection signal="area_entered" from="FinishLine" to="." method="_on_finish_line_area_entered"]
 
