@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="PotionResource" load_steps=3 format=3 uid="uid://8w4ey4lw2vx1"]
+[gd_resource type="Resource" script_class="PotionResource" load_steps=5 format=3 uid="uid://8w4ey4lw2vx1"]
 
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/spawner_effect.gd" id="1_dmmkb"]
+[ext_resource type="PackedScene" uid="uid://dourj6c3mmskt" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/force_push/force_projectile.tscn" id="2_c0lpt"]
+[ext_resource type="Texture2D" uid="uid://ceo41xp8tjiwv" path="res://alchemy/potions/potion_sprites/potions-force-push.png" id="2_mplm2"]
 [ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="2_mye30"]
-[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_psx5e"]
 
 [resource]
 script = ExtResource("2_mye30")
+potion_effect = ExtResource("1_dmmkb")
+vector = Vector2(2000, 0)
+projectile = ExtResource("2_c0lpt")
 item_name = "force push"
-texture2d = ExtResource("3_psx5e")
+texture2d = ExtResource("2_mplm2")

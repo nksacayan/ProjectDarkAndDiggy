@@ -85,7 +85,6 @@ debug_color = Color(0.992157, 0, 0, 0.419608)
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 0
-monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_6117p")

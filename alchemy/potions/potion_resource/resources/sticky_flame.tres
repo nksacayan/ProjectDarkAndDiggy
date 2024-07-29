@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/spawner_effect.gd" id="1_5ydhx"]
 [ext_resource type="Script" path="res://alchemy/potions/potion_resource/potion_resource.gd" id="1_dxx0i"]
-[ext_resource type="Texture2D" uid="uid://bj4qnwp0i4u0t" path="res://art_dump/structure_tower.png" id="2_bd8hx"]
 [ext_resource type="PackedScene" uid="uid://blquxunkiu763" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/napalm/sticky_fire_projectile.tscn" id="2_vkgvw"]
+[ext_resource type="Texture2D" uid="uid://cpb62pgx2xhj2" path="res://alchemy/potions/potion_sprites/potions-napalm.png" id="4_nnfag"]
 
 [resource]
 script = ExtResource("1_dxx0i")
@@ -11,4 +11,4 @@ potion_effect = ExtResource("1_5ydhx")
 vector = Vector2(2000, 0)
 projectile = ExtResource("2_vkgvw")
 item_name = "sticky flame"
-texture2d = ExtResource("2_bd8hx")
+texture2d = ExtResource("4_nnfag")

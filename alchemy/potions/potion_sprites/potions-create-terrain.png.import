@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8utt0hr5x8gl"
-path="res://.godot/imported/torch-fire-3.png-d3127633f3244c11c75c3b67ea324909.ctex"
+uid="uid://dvgj2ngi0bk8u"
+path="res://.godot/imported/potions-create-terrain.png-e9b10752b2be2ab5186bc1664b383e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/Light/assets/torch-fire-3.png"
-dest_files=["res://.godot/imported/torch-fire-3.png-d3127633f3244c11c75c3b67ea324909.ctex"]
+source_file="res://alchemy/potions/potion_sprites/potions-create-terrain.png"
+dest_files=["res://.godot/imported/potions-create-terrain.png-e9b10752b2be2ab5186bc1664b383e1b.ctex"]
 
 [params]
 

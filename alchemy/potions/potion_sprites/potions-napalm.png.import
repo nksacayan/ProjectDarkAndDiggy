@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8utt0hr5x8gl"
-path="res://.godot/imported/torch-fire-3.png-d3127633f3244c11c75c3b67ea324909.ctex"
+uid="uid://cpb62pgx2xhj2"
+path="res://.godot/imported/potions-napalm.png-b7353f96c2a0bf9a2bf1da93a15bdb7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/Light/assets/torch-fire-3.png"
-dest_files=["res://.godot/imported/torch-fire-3.png-d3127633f3244c11c75c3b67ea324909.ctex"]
+source_file="res://alchemy/potions/potion_sprites/potions-napalm.png"
+dest_files=["res://.godot/imported/potions-napalm.png-b7353f96c2a0bf9a2bf1da93a15bdb7f.ctex"]
 
 [params]
 

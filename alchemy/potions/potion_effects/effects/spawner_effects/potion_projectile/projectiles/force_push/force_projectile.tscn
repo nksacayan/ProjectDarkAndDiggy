@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbn36f4u5t0t7"]
+[gd_scene load_steps=6 format=3 uid="uid://dourj6c3mmskt"]
 
-[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/fire_projectile.gd" id="1_mrjy6"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/force_push/force_projectile.gd" id="1_a6s3s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ihdvj"]
 bounce = 0.3
@@ -10,11 +10,17 @@ size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ybj"]
 
-[node name="FireProjectile" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6b3k"]
+radius = 320.1
+
+[node name="ForceProjectile" type="RigidBody2D"]
 collision_layer = 1024
 collision_mask = 13
 physics_material_override = SubResource("PhysicsMaterial_ihdvj")
-script = ExtResource("1_mrjy6")
+script = ExtResource("1_a6s3s")
+push_force = 100000.0
+vertical_min = -1000.0
+horizontal_min = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
@@ -30,6 +36,14 @@ collision_mask = 97
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_i0ybj")
+
+[node name="ForceRadius" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 97
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForceRadius"]
+shape = SubResource("CircleShape2D_j6b3k")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvyuegee8c72l"]
+[gd_scene load_steps=12 format=3 uid="uid://bvyuegee8c72l"]
 
 [ext_resource type="Script" path="res://inventory/quick_inventory/quick_inventory.gd" id="1_gdtt7"]
+[ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="2_y6dto"]
+[ext_resource type="Resource" uid="uid://bebybyrw03sh8" path="res://alchemy/potions/potion_resource/resources/create_terrain.tres" id="3_4b4f8"]
 [ext_resource type="Resource" uid="uid://cyjeqb3ctpiok" path="res://alchemy/potions/potion_resource/resources/distraction.tres" id="4_scl5j"]
+[ext_resource type="Resource" uid="uid://dmg3qkyddiq1v" path="res://alchemy/potions/potion_resource/resources/earth_armor.tres" id="5_p6nrb"]
+[ext_resource type="Resource" uid="uid://c0a08h7xk6ys7" path="res://alchemy/potions/potion_resource/resources/fire.tres" id="6_a6smr"]
+[ext_resource type="Resource" uid="uid://8w4ey4lw2vx1" path="res://alchemy/potions/potion_resource/resources/force_push.tres" id="7_u5fpr"]
+[ext_resource type="Resource" uid="uid://diu0prx3s43vt" path="res://alchemy/potions/potion_resource/resources/heal.tres" id="8_viv1m"]
+[ext_resource type="Resource" uid="uid://dgrsc8unv6g1w" path="res://alchemy/potions/potion_resource/resources/high_jump.tres" id="9_vlwvd"]
+[ext_resource type="Resource" uid="uid://br4k8bq1i5bi7" path="res://alchemy/potions/potion_resource/resources/smoke.tres" id="10_jd66a"]
+[ext_resource type="Resource" uid="uid://djxvbtmcgl0a7" path="res://alchemy/potions/potion_resource/resources/sticky_flame.tres" id="11_58o3g"]
 
 [node name="QuickInventory" type="Node"]
 script = ExtResource("1_gdtt7")
-items = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("4_scl5j")])
+items = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("2_y6dto"), ExtResource("3_4b4f8"), ExtResource("4_scl5j"), ExtResource("5_p6nrb"), ExtResource("6_a6smr"), ExtResource("7_u5fpr"), ExtResource("8_viv1m"), ExtResource("9_vlwvd"), ExtResource("10_jd66a"), ExtResource("11_58o3g")])
