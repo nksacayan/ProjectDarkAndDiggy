@@ -15,5 +15,5 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	var mouse_event: InputEventMouseButton = event as InputEventMouseButton
-	if mouse_event and mouse_event.pressed and item:
+	if mouse_event and mouse_event.pressed and item and mouse_event.button_index == MOUSE_BUTTON_LEFT:
 		clicked.emit(self as ItemCard)

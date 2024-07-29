@@ -10,18 +10,24 @@ layer = 2
 script = ExtResource("1_288fp")
 
 [node name="LivesHud" parent="." instance=ExtResource("2_xshgd")]
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
-offset_left = -392.0
-offset_top = -128.0
+anchor_bottom = 0.0
+offset_left = -467.0
+offset_top = 76.0
+offset_right = -88.0
+offset_bottom = 204.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 1
 
 [node name="Quickbar" parent="." instance=ExtResource("3_m74vd")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
+offset_left = 82.0
+offset_top = -191.0
+offset_right = 870.0
+offset_bottom = -63.0
 grow_horizontal = 1
 grow_vertical = 0
 
