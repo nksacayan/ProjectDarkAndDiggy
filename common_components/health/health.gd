@@ -12,6 +12,7 @@ var current_health: int:
 	set(p_value):
 		current_health = clampi(p_value, 0, max_health)
 		health_changed.emit(current_health)
+		print_debug("Current HP: ", current_health)
 		if current_health <= 0:
 			died.emit()
 

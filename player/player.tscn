@@ -98,5 +98,6 @@ one_shot = true
 [node name="PlayerHUD" parent="." instance=ExtResource("9_hi2fu")]
 
 [connection signal="jump_input" from="PlayerInput" to="." method="_on_player_input_jump_input"]
+[connection signal="died" from="Health" to="." method="_on_health_died"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

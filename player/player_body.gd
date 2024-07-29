@@ -67,7 +67,6 @@ func _check_target(area) -> void:
 	var sm : StateMachine = enemy.get_node("StateMachine")
 	if sm.current_state.name == "ChaseState":
 		if !armor_flag:
-			print_debug("No Armor + Attacking Enemy in: ", sm.current_state.name)
 			return
 		else:
 			armor_flag = false	
@@ -79,3 +78,7 @@ func _on_hitbox_area_entered(area) -> void:
 
 func _on_stun_timer_timeout():
 	knockback_force = Vector2(0,0) # Reset Knockback Force
+
+
+func _on_health_died():
+	get_parent().get_parent().game_over()

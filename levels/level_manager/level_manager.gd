@@ -22,10 +22,13 @@ func _deferred_transition_next_level() -> void:
 func load_main() -> void:
 	if !main_menu:
 		push_error("Error: No Main Menu")
+	level_select = 0
 	add_child(main_menu.instantiate())
 
 func game_over() -> void:
 	call_deferred("_deffered_game_over")
 
 func _deffered_game_over() -> void:
-	pass
+	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
+	add_child(load("res://Menu/game_over_menu.tscn").instantiate())
+	
