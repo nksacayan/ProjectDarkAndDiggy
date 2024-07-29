@@ -8,15 +8,19 @@ const _DETECT_RANGE : float = 250.0
 
 var los_count : int = 0
 var target #Assume Area2D. Can be PlayerBody or DistractionOBJ
+var distracted : bool = false
 
 func enter(p_target) -> void:
 	#Grabs Enemy and target Nodes
 	hitbox.get_child(0).disabled = false #hitbox's CollisionShape2d
 	target = p_target
+	if !target is PlayerBody:
+		distracted = true
 
 
 func exit() -> void:
 	target = null
+	distracted = false
 
 func physics_update(_delta:float) -> void:
 	if target == null:
@@ -39,6 +43,10 @@ func check_direction() -> void:
 
 func check_los() -> void:
 	los.target_position = los.to_local(target.global_position)
+	if (!distracted) and los.get_collider() is Area2D:
+		target = los.get_collider()
+		distracted = true
+			
 	if ! ( (los.get_collider() is PlayerBody) or \
 		 (los.get_collider() is Area2D)):
 		los_count += 1
