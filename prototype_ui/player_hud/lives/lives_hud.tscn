@@ -1,38 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhqna0nc53y4b"]
+[gd_scene load_steps=5 format=3 uid="uid://bhqna0nc53y4b"]
 
-[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="1_0ubhy"]
+[ext_resource type="Script" path="res://prototype_ui/player_hud/lives/lives_hud.gd" id="1_jcty4"]
+[ext_resource type="Texture2D" uid="uid://c0mfi7itm2255" path="res://prototype_ui/player_hud/lives/heart-red.png" id="2_bygpk"]
+[ext_resource type="Texture2D" uid="uid://7uckmpbeopf5" path="res://prototype_ui/player_hud/lives/heart-grey.png" id="3_odhu4"]
+[ext_resource type="PackedScene" uid="uid://cfskovoe02rdo" path="res://prototype_ui/player_hud/lives/heart_rect.tscn" id="4_5ucf4"]
 
-[node name="LivesHud" type="PanelContainer"]
+[node name="LivesHud" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jcty4")
+full_heart = ExtResource("2_bygpk")
+empty_heart = ExtResource("3_odhu4")
+heart_rect_scene = ExtResource("4_5ucf4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HeartRect" parent="." instance=ExtResource("4_5ucf4")]
 layout_mode = 2
-alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+[node name="HeartRect2" parent="." instance=ExtResource("4_5ucf4")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer"]
+[node name="HeartRect3" parent="." instance=ExtResource("4_5ucf4")]
 layout_mode = 2
-texture = ExtResource("1_0ubhy")
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer2"]
-layout_mode = 2
-texture = ExtResource("1_0ubhy")
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer3"]
-layout_mode = 2
-texture = ExtResource("1_0ubhy")

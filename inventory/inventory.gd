@@ -10,9 +10,10 @@ signal items_updated
 @export var items: Array[ItemResource]
 
 
-func add_to_inventory(p_item: ItemResource) -> void:
+func add_to_inventory(p_item: ItemResource) -> bool:
 	items.append(p_item)
 	items_updated.emit()
+	return true
 
 func remove_from_inventory(p_item: ItemResource) -> void:
 	items.erase(p_item)

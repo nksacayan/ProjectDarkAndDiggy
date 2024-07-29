@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cthj7wyuq7y5c"]
+[gd_scene load_steps=2 format=3 uid="uid://cthj7wyuq7y5c"]
 
 [ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.gd" id="1_527yt"]
-[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_g47iv"]
 
 [node name="ItemCard" type="PanelContainer"]
 anchors_preset = 15
@@ -13,7 +12,8 @@ script = ExtResource("1_527yt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("3_g47iv")
+expand_mode = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

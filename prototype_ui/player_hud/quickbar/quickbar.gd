@@ -13,11 +13,19 @@ func _ready() -> void:
 
 func _update_item_cards() -> void:
 	_clear_item_cards()
+	var num_filled_cards: int = 0
 	for item: ItemResource in AutoloadQuickInventory.items:
 		var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
 		item_card.item = item
 		item_card.clicked.connect(_on_item_clicked)
 		item_row.add_child(item_card)
+		num_filled_cards += 1
+	while num_filled_cards < AutoloadQuickInventory.max_quick_items:
+		# add dummy card
+		var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
+		item_row.add_child(item_card)
+		num_filled_cards += 1
+	
 
 func _clear_item_cards() -> void:
 	for item in item_row.get_children():

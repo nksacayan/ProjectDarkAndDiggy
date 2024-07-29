@@ -1,6 +1,9 @@
 class_name PlayerBody
 extends CharacterBody2D
 
+
+signal earth_armor_activated(p_activated: bool)
+
 const _MOVE_SPEED: float = 50000.0
 const _JUMP_FORCE: float = -1000.0
 
@@ -16,7 +19,10 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 var knockback_force : Vector2 = Vector2(0,0)
-var armor_flag : bool = false
+var armor_flag : bool = false:
+	set(value):
+		armor_flag = value
+		earth_armor_activated.emit(armor_flag)
 
 
 func _ready():

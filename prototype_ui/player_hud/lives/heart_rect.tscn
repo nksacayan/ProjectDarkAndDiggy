@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfskovoe02rdo"]
+
+[ext_resource type="Texture2D" uid="uid://c0mfi7itm2255" path="res://prototype_ui/player_hud/lives/heart-red.png" id="1_a814h"]
+
+[node name="HeartRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_a814h")
+expand_mode = 1
