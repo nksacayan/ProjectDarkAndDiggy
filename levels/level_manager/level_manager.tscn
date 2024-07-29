@@ -10,4 +10,4 @@
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_tfgg6")
 main_menu = ExtResource("2_spcuv")
-level_list = Array[PackedScene]([ExtResource("2_6puk1"), ExtResource("2_ho8t1"), ExtResource("5_6bhbm"), ExtResource("6_bfh0a")])
+level_list = Array[PackedScene]([ExtResource("5_6bhbm"), ExtResource("2_ho8t1"), ExtResource("2_6puk1"), ExtResource("6_bfh0a")])
