@@ -33,7 +33,6 @@ position = Vector2(34845, 4458)
 
 [node name="Kobold4" parent="." instance=ExtResource("4_vblpn")]
 position = Vector2(20659, 2117)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold4" index="6"]
@@ -47,7 +46,6 @@ position = Vector2(20626, 2156)
 
 [node name="Kobold2" parent="." instance=ExtResource("4_vblpn")]
 position = Vector2(13435, 1903)
-metadata/_edit_group_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold2" index="6"]
 position = Vector2(12493, 1958)
@@ -58,22 +56,12 @@ position = Vector2(17058, 1973)
 [node name="PatrolBoundStart" parent="Kobold2" index="8"]
 position = Vector2(13434, 1948)
 
-[node name="PatrolState" parent="Kobold2/StateMachine" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="ChaseState" parent="Kobold2/StateMachine" index="1"]
-metadata/_edit_lock_ = true
-
-[node name="ReturnState" parent="Kobold2/StateMachine" index="2"]
-metadata/_edit_lock_ = true
-
 [node name="PlayerBody" parent="." instance=ExtResource("2_dil7w")]
 position = Vector2(-1452, -162)
 metadata/_edit_group_ = true
 
 [node name="Kobold" parent="." instance=ExtResource("4_vblpn")]
 position = Vector2(2474, -650)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold" index="6"]
@@ -87,7 +75,6 @@ position = Vector2(2582, -655)
 
 [node name="Kobold3" parent="." instance=ExtResource("4_vblpn")]
 position = Vector2(16595, 1912)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold3" index="6"]
@@ -99,18 +86,8 @@ position = Vector2(16989, 1975)
 [node name="PatrolBoundStart" parent="Kobold3" index="8"]
 position = Vector2(16745, 1978)
 
-[node name="PatrolState" parent="Kobold3/StateMachine" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="ChaseState" parent="Kobold3/StateMachine" index="1"]
-metadata/_edit_lock_ = true
-
-[node name="ReturnState" parent="Kobold3/StateMachine" index="2"]
-metadata/_edit_lock_ = true
-
 [node name="Kobold5" parent="." instance=ExtResource("4_vblpn")]
 position = Vector2(10848, 2623)
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold5" index="6"]
@@ -121,15 +98,6 @@ position = Vector2(11422, 2642)
 
 [node name="PatrolBoundStart" parent="Kobold5" index="8"]
 position = Vector2(10718, 2621)
-
-[node name="PatrolState" parent="Kobold5/StateMachine" index="0"]
-metadata/_edit_lock_ = true
-
-[node name="ChaseState" parent="Kobold5/StateMachine" index="1"]
-metadata/_edit_lock_ = true
-
-[node name="ReturnState" parent="Kobold5/StateMachine" index="2"]
-metadata/_edit_lock_ = true
 
 [connection signal="area_entered" from="FinishLine" to="." method="_on_finish_line_area_entered"]
 
