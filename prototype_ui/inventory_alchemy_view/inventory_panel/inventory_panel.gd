@@ -30,7 +30,8 @@ func _on_item_clicked(p_item_card: ItemCard) -> void:
 		if add_successful:
 			AutoloadInventory.remove_from_inventory(p_item_card.item)
 	elif p_item_card.item is PotionResource:
-		AutoloadQuickInventory.add_to_inventory(p_item_card.item)
-		AutoloadInventory.remove_from_inventory(p_item_card.item)
+		var add_successful: bool = AutoloadQuickInventory.add_to_inventory(p_item_card.item)
+		if add_successful:
+			AutoloadInventory.remove_from_inventory(p_item_card.item)
 	else:
 		push_warning("undefined item")
