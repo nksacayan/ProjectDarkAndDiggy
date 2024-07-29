@@ -60,7 +60,7 @@ script = ExtResource("5_i0qo2")
 shape = SubResource("CapsuleShape2D_xmqaa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.375, 0.375)
 
 [node name="PlayerInput" type="Node" parent="."]
 unique_name_in_owner = true

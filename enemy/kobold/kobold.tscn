@@ -34,8 +34,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2xkr"]
-radius = 80.0
-height = 258.0
+radius = 76.0
+height = 246.0
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3uiq3"]
 points = PackedVector2Array(0, 0, 5000, 1000, 5000, -1000)
@@ -56,6 +56,7 @@ position = Vector2(0, -1)
 collision_layer = 8
 collision_mask = 1025
 script = ExtResource("1_g7ieu")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -137,12 +138,15 @@ inital_state = NodePath("PatrolState")
 
 [node name="PatrolState" type="Node2D" parent="StateMachine"]
 script = ExtResource("4_2t6yl")
+metadata/_edit_lock_ = true
 
 [node name="ChaseState" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_rrv1x")
+metadata/_edit_lock_ = true
 
 [node name="ReturnState" type="Node2D" parent="StateMachine"]
 script = ExtResource("9_5xfb1")
+metadata/_edit_lock_ = true
 
 [node name="LightBeam" type="Sprite2D" parent="."]
 unique_name_in_owner = true
