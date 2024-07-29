@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu6evhacsmedy"]
+[gd_scene load_steps=10 format=3 uid="uid://cu6evhacsmedy"]
 
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="1_ibkwa"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="2_cu8cn"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="3_m0l2e"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="4_lkrxd"]
+[ext_resource type="Resource" uid="uid://cjje472qn11dq" path="res://alchemy/ingredients/special_dirt.tres" id="5_jgx5v"]
+[ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="6_0y5e7"]
+[ext_resource type="Resource" uid="uid://bebybyrw03sh8" path="res://alchemy/potions/potion_resource/resources/create_terrain.tres" id="7_rbn87"]
+[ext_resource type="Resource" uid="uid://dmg3qkyddiq1v" path="res://alchemy/potions/potion_resource/resources/earth_armor.tres" id="8_inqae"]
+[ext_resource type="Resource" uid="uid://c0a08h7xk6ys7" path="res://alchemy/potions/potion_resource/resources/fire.tres" id="9_4vr3w"]
 
 [node name="Inventory" type="Node"]
 script = ExtResource("1_ibkwa")
+items = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("2_cu8cn"), ExtResource("3_m0l2e"), ExtResource("4_lkrxd"), ExtResource("5_jgx5v"), ExtResource("6_0y5e7"), ExtResource("7_rbn87"), ExtResource("8_inqae"), ExtResource("9_4vr3w")])
 max_items = 18

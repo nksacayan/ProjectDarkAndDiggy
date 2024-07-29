@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://n5sh67t037gt"]
+[gd_scene load_steps=10 format=3 uid="uid://n5sh67t037gt"]
 
 [ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/alchemy_panel.gd" id="1_823b2"]
+[ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="2_8n2op"]
 [ext_resource type="Texture2D" uid="uid://b2ryx5jgqcch" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/mixing-icon.png" id="2_8rvnw"]
 [ext_resource type="Texture2D" uid="uid://bdmkq0mkqd6va" path="res://prototype_ui/panel-container-off-white.png" id="3_7ncgu"]
 [ext_resource type="Texture2D" uid="uid://bpk0y4r2o08jy" path="res://prototype_ui/inventory_alchemy_view/alchemy_panel/combine-ingredients-button.png" id="3_w3218"]
@@ -34,6 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_823b2")
+item_card_scene = ExtResource("2_8n2op")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2
