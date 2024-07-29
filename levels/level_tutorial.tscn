@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="2_e3ywq"]
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="2_mrdph"]
 [ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="3_bsj7s"]
-[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/light/LightSource.tscn" id="6_loscg"]
+[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/Light/LightSource.tscn" id="6_loscg"]
 [ext_resource type="LabelSettings" uid="uid://bne47ky3w4ycc" path="res://objects/Label Styles/level_tutorial.tres" id="7_q0e4o"]
 
 [node name="LevelTutorial" type="Node2D"]
