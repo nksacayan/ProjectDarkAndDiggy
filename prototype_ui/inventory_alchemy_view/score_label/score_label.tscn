@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://3bm8by82q253"]
+[gd_scene load_steps=3 format=3 uid="uid://3bm8by82q253"]
 
+[ext_resource type="FontFile" uid="uid://688uaeeaso7s" path="res://art_dump/ShareTechMono-Regular.ttf" id="1_huniq"]
 [ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/score_label/score_label.gd" id="1_rp3e7"]
 
 [node name="ScoreLabel" type="Label"]
@@ -8,6 +9,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_huniq")
+theme_override_font_sizes/font_size = 64
 text = "12345"
 horizontal_alignment = 1
 vertical_alignment = 1

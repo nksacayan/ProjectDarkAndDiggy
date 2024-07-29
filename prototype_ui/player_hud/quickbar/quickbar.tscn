@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://prototype_ui/player_hud/quickbar/quickbar.gd" id="1_yrib5"]
 [ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="2_2oagx"]
 
-[node name="Quickbar" type="PanelContainer"]
+[node name="Quickbar" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,25 +12,20 @@ grow_vertical = 2
 script = ExtResource("1_yrib5")
 item_card_scene = ExtResource("2_2oagx")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-alignment = 1
-
-[node name="ItemCard" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2
 
-[node name="ItemCard2" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard2" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2
 
-[node name="ItemCard3" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard3" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2
 
-[node name="ItemCard4" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard4" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2
 
-[node name="ItemCard5" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard5" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2
 
-[node name="ItemCard6" parent="HBoxContainer" instance=ExtResource("2_2oagx")]
+[node name="ItemCard6" parent="." instance=ExtResource("2_2oagx")]
 layout_mode = 2

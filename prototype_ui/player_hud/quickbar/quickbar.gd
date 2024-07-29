@@ -1,9 +1,8 @@
-extends PanelContainer
+extends HBoxContainer
 
 
 @export var item_card_scene: PackedScene
 var item_cards: Array[ItemCard]
-@onready var item_row: HBoxContainer = %HBoxContainer
 
 
 func _ready() -> void:
@@ -18,17 +17,17 @@ func _update_item_cards() -> void:
 		var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
 		item_card.item = item
 		item_card.clicked.connect(_on_item_clicked)
-		item_row.add_child(item_card)
+		add_child(item_card)
 		num_filled_cards += 1
 	while num_filled_cards < AutoloadQuickInventory.max_items:
 		# add dummy card
 		var item_card: ItemCard = item_card_scene.instantiate() as ItemCard
-		item_row.add_child(item_card)
+		add_child(item_card)
 		num_filled_cards += 1
 	
 
 func _clear_item_cards() -> void:
-	for item in item_row.get_children():
+	for item in get_children():
 		item.queue_free()
 
 func _on_item_clicked(p_item_card: ItemCard) -> void:

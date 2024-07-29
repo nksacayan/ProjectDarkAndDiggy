@@ -134,8 +134,6 @@ size_flags_stretch_ratio = 5.0
 texture_normal = ExtResource("3_w3218")
 texture_pressed = ExtResource("3_w3218")
 texture_hover = ExtResource("3_w3218")
-texture_disabled = ExtResource("3_w3218")
-texture_focused = ExtResource("3_w3218")
 stretch_mode = 0
 
 [node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer2/HBoxContainer"]
