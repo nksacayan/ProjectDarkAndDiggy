@@ -18,3 +18,11 @@ func _get_player() -> PlayerBody:
 
 func _toggle_armor_image(armor_enabled: bool) -> void:
 	armor_image.visible = armor_enabled
+
+func _on_inventory_button_pressed() -> void:
+	var inventory_event: InputEventAction = InputEventAction.new()
+	inventory_event.action = "toggle_inventory"
+	inventory_event.pressed = true
+	Input.parse_input_event(inventory_event)
+	#Input.action_press("toggle_inventory")
+	print_debug("inventory button pressed")
