@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://di03pj8g1i5fn"]
+[gd_scene load_steps=5 format=3 uid="uid://di03pj8g1i5fn"]
 
 [ext_resource type="Script" path="res://prototype_ui/player_hud/player_hud.gd" id="1_288fp"]
 [ext_resource type="PackedScene" uid="uid://bhqna0nc53y4b" path="res://prototype_ui/player_hud/lives/lives_hud.tscn" id="2_xshgd"]
 [ext_resource type="PackedScene" uid="uid://cdtvh3fb8nebc" path="res://prototype_ui/player_hud/quickbar/quickbar.tscn" id="3_m74vd"]
+[ext_resource type="PackedScene" uid="uid://csqve737x2i4r" path="res://prototype_ui/player_hud/armor_image/armor_image.tscn" id="4_kjwgk"]
 
 [node name="PlayerHUD" type="CanvasLayer"]
 layer = 2
@@ -23,3 +24,14 @@ anchor_top = 1.0
 anchor_right = 0.0
 grow_horizontal = 1
 grow_vertical = 0
+
+[node name="ArmorImage" parent="." instance=ExtResource("4_kjwgk")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 107.0
+offset_bottom = 107.0
+grow_horizontal = 1
+grow_vertical = 1
