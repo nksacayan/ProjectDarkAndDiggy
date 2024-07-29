@@ -1,27 +1,29 @@
 [gd_scene load_steps=3 format=3 uid="uid://qsh8vsnuwohw"]
 
-[ext_resource type="Script" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/inventory_panel.gd" id="1_efkt8"]
-[ext_resource type="PackedScene" uid="uid://cthj7wyuq7y5c" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/item_card/item_card.tscn" id="2_4k84v"]
+[ext_resource type="Texture2D" uid="uid://bpgfbvf4j0e1r" path="res://art_dump/icon.svg" id="3_8u5yk"]
 
-[node name="InventoryPanel" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl0nu"]
+
+[node name="InventoryPanel" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_efkt8")
-item_card_scene = ExtResource("2_4k84v")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(126, 126)
 layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_8u5yk")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
-text = "Items"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_dl0nu")
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 3
