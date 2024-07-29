@@ -28,7 +28,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 func _randomize_sprite() -> void:
 	var rng := RandomNumberGenerator.new()
-	sprite.texture = sprites[rng.randi_range(0, sprites.size())]
+	sprite.texture = sprites[rng.randi_range(0, sprites.size() - 1)]
 
 func _bob_and_float(delta: float) -> void:
 	time_passed += delta  # Accumulate time   

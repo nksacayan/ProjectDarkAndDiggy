@@ -16,6 +16,9 @@ func transistion_next_level() -> void:
 
 #Deffered call to tranistion into next level in array
 func _deferred_transition_next_level() -> void:
+	if level_select >= level_list.size():
+		game_over()
+		return
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
 	add_child(level_list[level_select].instantiate())
 	level_select += 1

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjhrsgefwfckj"]
+[gd_scene load_steps=11 format=3 uid="uid://bjhrsgefwfckj"]
 
 [ext_resource type="Script" path="res://levels/level_transition.gd" id="1_ekn76"]
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="2_wngid"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="3_a7mvj"]
 [ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="4_gsqa1"]
+[ext_resource type="Script" path="res://levels/random_rewards.gd" id="5_56jsh"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="6_7hl22"]
+[ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="6_bmnn4"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="7_m32mk"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="8_1kfif"]
+[ext_resource type="Resource" uid="uid://cjje472qn11dq" path="res://alchemy/ingredients/special_dirt.tres" id="9_o87r4"]
 
 [node name="LevelReward" type="Node2D"]
 script = ExtResource("1_ekn76")
@@ -23,5 +29,63 @@ metadata/_edit_group_ = true
 [node name="FinishLine" parent="." instance=ExtResource("4_gsqa1")]
 position = Vector2(4923, 3447)
 metadata/_edit_lock_ = true
+
+[node name="Rewards" type="Node" parent="."]
+script = ExtResource("5_56jsh")
+reward_table = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("6_7hl22"), ExtResource("7_m32mk"), ExtResource("8_1kfif"), ExtResource("9_o87r4")])
+
+[node name="Collectable" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1922, 956)
+
+[node name="Collectable2" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1916, 1236)
+
+[node name="Collectable3" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1924, 1522)
+
+[node name="Collectable4" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1917, 1824)
+
+[node name="Collectable5" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1925, 2104)
+
+[node name="Collectable6" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(1922, 2386)
+
+[node name="Collectable7" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2695, 974)
+
+[node name="Collectable8" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2689, 1254)
+
+[node name="Collectable9" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2697, 1540)
+
+[node name="Collectable10" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2690, 1842)
+
+[node name="Collectable11" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2698, 2122)
+
+[node name="Collectable12" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(2695, 2404)
+
+[node name="Collectable13" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3468, 980)
+
+[node name="Collectable14" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3462, 1260)
+
+[node name="Collectable15" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3470, 1546)
+
+[node name="Collectable16" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3463, 1848)
+
+[node name="Collectable17" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3471, 2128)
+
+[node name="Collectable18" parent="Rewards" instance=ExtResource("6_bmnn4")]
+position = Vector2(3468, 2410)
 
 [connection signal="area_entered" from="FinishLine" to="." method="_on_finish_line_area_entered"]
