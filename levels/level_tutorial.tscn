@@ -176,7 +176,6 @@ position = Vector2(1410, -382)
 
 [node name="Kobold3" parent="." instance=ExtResource("2_e3ywq")]
 position = Vector2(24565, 93)
-metadata/_edit_lock_ = true
 
 [node name="PatrolBoundLeft" parent="Kobold3" index="6"]
 position = Vector2(24077, 149)

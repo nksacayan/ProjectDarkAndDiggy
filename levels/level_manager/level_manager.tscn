@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://levels/level_manager/level_manager.gd" id="1_tfgg6"]
 [ext_resource type="PackedScene" uid="uid://cuv6opd7uqiqb" path="res://levels/level_1.tscn" id="2_6puk1"]
-[ext_resource type="PackedScene" uid="uid://bher1ak5mo5g5" path="res://levels/level_tutorial.tscn" id="2_ho8t1"]
 [ext_resource type="PackedScene" uid="uid://bet56jl07wp1l" path="res://Menu/Menu.tscn" id="2_spcuv"]
 [ext_resource type="PackedScene" uid="uid://dkowd61gnvj4o" path="res://Menu/game_over_menu.tscn" id="3_8emjk"]
+[ext_resource type="PackedScene" uid="uid://c8uxdcsohkpjn" path="res://levels/level_tutorialv2.tscn" id="4_7gocg"]
 [ext_resource type="PackedScene" uid="uid://bjhrsgefwfckj" path="res://levels/level_Reward.tscn" id="5_6bhbm"]
 [ext_resource type="PackedScene" uid="uid://povjfshbrmp3" path="res://levels/level_2.tscn" id="6_bfh0a"]
 
@@ -12,4 +12,4 @@
 script = ExtResource("1_tfgg6")
 main_menu = ExtResource("2_spcuv")
 game_over_scene = ExtResource("3_8emjk")
-level_list = Array[PackedScene]([ExtResource("2_ho8t1"), ExtResource("2_6puk1"), ExtResource("5_6bhbm"), ExtResource("6_bfh0a")])
+level_list = Array[PackedScene]([ExtResource("4_7gocg"), ExtResource("2_6puk1"), ExtResource("5_6bhbm"), ExtResource("6_bfh0a")])
