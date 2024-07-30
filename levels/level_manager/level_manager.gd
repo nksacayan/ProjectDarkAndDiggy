@@ -18,7 +18,7 @@ func transistion_next_level() -> void:
 #Deffered call to tranistion into next level in array
 func _deferred_transition_next_level() -> void:
 	if level_select >= level_list.size():
-		game_over()
+		game_over(true)
 		return
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
 	add_child(level_list[level_select].instantiate())
@@ -31,10 +31,12 @@ func load_main() -> void:
 	level_select = 0
 	add_child(main_menu.instantiate())
 
-func game_over() -> void:
-	call_deferred("_defered_game_over")
+func game_over(did_win: bool) -> void:
+	call_deferred("_defered_game_over", did_win)
 
-func _defered_game_over() -> void:
+func _defered_game_over(did_win: bool) -> void:
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
-	add_child(game_over_scene.instantiate())
+	var game_over_menu: GameOverMenu = game_over_scene.instantiate() as GameOverMenu
+	game_over_menu.setup(did_win)
+	add_child(game_over_menu)
 	

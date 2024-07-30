@@ -81,4 +81,4 @@ func _on_stun_timer_timeout():
 
 
 func _on_health_died():
-	get_parent().get_parent().game_over()
+	get_parent().get_parent().game_over(false)
