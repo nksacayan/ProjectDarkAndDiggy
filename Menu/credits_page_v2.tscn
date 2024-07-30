@@ -15,7 +15,7 @@ script = ExtResource("1_si557")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 256
+theme_override_constants/margin_top = 126
 theme_override_constants/margin_right = 256
 theme_override_constants/margin_bottom = 256
 
@@ -31,12 +31,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 20.0
+size_flags_stretch_ratio = 19.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 2.1
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
