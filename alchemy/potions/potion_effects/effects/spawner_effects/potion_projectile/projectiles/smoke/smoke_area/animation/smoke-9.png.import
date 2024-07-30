@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b40pgjijow6u7"
-path="res://.godot/imported/Untitled_Artwork-4.png-79aa8f2ba3f89b32b28394a3d230d1fb.ctex"
+uid="uid://dlo4e1y0y5vil"
+path="res://.godot/imported/smoke-9.png-b5b7c71b3605c1765b1f4e90b7e8934d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/smoke/smoke_area/animation/Untitled_Artwork-4.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-4.png-79aa8f2ba3f89b32b28394a3d230d1fb.ctex"]
+source_file="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/smoke/smoke_area/animation/smoke-9.png"
+dest_files=["res://.godot/imported/smoke-9.png-b5b7c71b3605c1765b1f4e90b7e8934d.ctex"]
 
 [params]
 

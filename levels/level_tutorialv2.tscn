@@ -60,8 +60,7 @@ position = Vector2(-8, -296)
 position = Vector2(14081, -18)
 
 [node name="FinishLine" parent="." instance=ExtResource("7_xe1ls")]
-position = Vector2(28231, 375)
-metadata/_edit_lock_ = true
+position = Vector2(28231, 402)
 
 [node name="TextPanel" parent="." instance=ExtResource("23_pibi5")]
 offset_left = -4688.0
@@ -471,7 +470,7 @@ position = Vector2(15947, 954)
 position = Vector2(15853, 948)
 
 [node name="Kobold3" parent="." instance=ExtResource("4_dcv7q")]
-position = Vector2(24565, 93)
+position = Vector2(24800, -472)
 
 [node name="PatrolBoundLeft" parent="Kobold3" index="6"]
 position = Vector2(24077, 149)
