@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://alchemy/ingredients/ingredient_resource.gd" id="1_8fyfi"]
 [ext_resource type="Resource" uid="uid://dmg3qkyddiq1v" path="res://alchemy/potions/potion_resource/resources/earth_armor.tres" id="1_20qff"]
-[ext_resource type="Texture2D" uid="uid://3dlm4yly8ja" path="res://art_dump/placeholder/structure_house.png" id="2_hgsnh"]
 [ext_resource type="Resource" uid="uid://djxvbtmcgl0a7" path="res://alchemy/potions/potion_resource/resources/sticky_flame.tres" id="2_njfih"]
 [ext_resource type="Resource" uid="uid://8w4ey4lw2vx1" path="res://alchemy/potions/potion_resource/resources/force_push.tres" id="3_d8sel"]
 [ext_resource type="Resource" uid="uid://bebybyrw03sh8" path="res://alchemy/potions/potion_resource/resources/create_terrain.tres" id="4_ixv33"]
+[ext_resource type="Texture2D" uid="uid://np0e7b5yiinh" path="res://alchemy/ingredients/special-dirt.png" id="6_yvgns"]
 
 [resource]
 script = ExtResource("1_8fyfi")
 combo_result = Array[Resource("res://alchemy/potions/potion_resource/potion_resource.gd")]([ExtResource("1_20qff"), ExtResource("2_njfih"), ExtResource("3_d8sel"), ExtResource("4_ixv33")])
 item_name = "special_dirt"
-texture2d = ExtResource("2_hgsnh")
+texture2d = ExtResource("6_yvgns")
