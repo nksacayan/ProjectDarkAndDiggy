@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://povjfshbrmp3"]
+[gd_scene load_steps=15 format=3 uid="uid://povjfshbrmp3"]
 
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="1_ej67m"]
 [ext_resource type="Script" path="res://levels/level_transition.gd" id="1_j2v6l"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="4_7ttd1"]
 [ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="7_y0bi2"]
 [ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="8_id3nu"]
+[ext_resource type="Script" path="res://levels/random_rewards.gd" id="10_iccue"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="11_pn7ei"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="12_j6fyx"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="13_m8lxg"]
+[ext_resource type="Resource" uid="uid://cjje472qn11dq" path="res://alchemy/ingredients/special_dirt.tres" id="14_evvi5"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j2v6l")
@@ -194,6 +199,34 @@ position = Vector2(23059, 11134)
 
 [node name="Treasure30" parent="TreasureNode" instance=ExtResource("3_2wune")]
 position = Vector2(23059, 10931)
+
+[node name="RandomDrops" type="Node" parent="."]
+script = ExtResource("10_iccue")
+reward_table = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("11_pn7ei"), ExtResource("12_j6fyx"), ExtResource("13_m8lxg"), ExtResource("14_evvi5")])
+
+[node name="Collectable" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(1972, 2224)
+
+[node name="Collectable2" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(4825, 1703)
+
+[node name="Collectable3" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(5202, 1697)
+
+[node name="Collectable4" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(7479, 2981)
+
+[node name="Collectable5" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(1604, 4765)
+
+[node name="Collectable6" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(2311, 4755)
+
+[node name="Collectable7" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(9941, 6784)
+
+[node name="Collectable8" parent="RandomDrops" instance=ExtResource("7_y0bi2")]
+position = Vector2(10262, 6765)
 
 [connection signal="area_entered" from="FinishLine" to="." method="_on_finish_line_area_entered"]
 

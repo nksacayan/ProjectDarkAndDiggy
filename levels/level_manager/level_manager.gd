@@ -30,20 +30,19 @@ func _deferred_transition_next_level() -> void:
 	next_level_transitioned.emit()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_pause_menu") and pause_ready:
-		pause_ready = false
+	if event.is_action_pressed("toggle_pause_menu") and get_children().size() < 2:
 		add_child(pause_menu_scene.instantiate())
 		get_tree().paused = true
-		
 
-		
-		
+
+
 
 func load_main() -> void:
 	if !main_menu:
 		push_error("Error: No Main Menu")
 	level_select = 0
 	add_child(main_menu.instantiate())
+	pause_ready = false
 
 func game_over(did_win: bool) -> void:
 	pause_ready = false
