@@ -5,7 +5,11 @@ extends Control
 @export var you_win: Texture2D
 @export var game_over: Texture2D
 @export var game_over_rect: TextureRect
+@export var score: Label
 
+
+func _ready() -> void:
+	score.text = str(AutoloadScorekeeper.score)
 
 func setup(p_did_win: bool) -> void:
 	if p_did_win:
