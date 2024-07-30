@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4t45gnsf7nls"]
+
+[ext_resource type="Script" path="res://Menu/credits_page.gd" id="1_si557"]
+[ext_resource type="Texture2D" uid="uid://cqb2hiy7k8dyp" path="res://Menu/images/Credits_lump.png" id="2_y787s"]
+[ext_resource type="Texture2D" uid="uid://sq0wa3ejyj5s" path="res://Menu/images/back.png" id="3_jahtk"]
+
+[node name="CreditsPage" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_si557")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 256
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 256
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_y787s")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="Button" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("3_jahtk")
+texture_pressed = ExtResource("3_jahtk")
+texture_hover = ExtResource("3_jahtk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

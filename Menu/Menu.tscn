@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bet56jl07wp1l"]
 
 [ext_resource type="Script" path="res://Menu/Menu.gd" id="1_ig770"]
-[ext_resource type="PackedScene" uid="uid://ch5u00i6oupm0" path="res://Menu/credits_page.tscn" id="2_fx7gk"]
+[ext_resource type="PackedScene" uid="uid://b4t45gnsf7nls" path="res://Menu/credits_page_v2.tscn" id="2_drgbn"]
 [ext_resource type="Texture2D" uid="uid://d4evuqfk2rys6" path="res://Menu/images/Logo.png" id="3_6yv82"]
 [ext_resource type="Texture2D" uid="uid://10wxo4wktr6j" path="res://Menu/images/Start Game.png" id="4_3d8rd"]
 [ext_resource type="Texture2D" uid="uid://cfecck2fwku0u" path="res://Menu/images/credits.png" id="5_kitv6"]
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig770")
-credits_scene = ExtResource("2_fx7gk")
+credits_scene = ExtResource("2_drgbn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
