@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://enemy/kobold/KoboldAnimationHandler.gd" id="5_b012h"]
 [ext_resource type="Script" path="res://enemy/states/chase_state.gd" id="5_rrv1x"]
 [ext_resource type="Script" path="res://enemy/states/return_state.gd" id="9_5xfb1"]
-[ext_resource type="Texture2D" uid="uid://lwqkru1wyp3y" path="res://objects/Light/assets/light-beam.png" id="10_0cv44"]
+[ext_resource type="Texture2D" uid="uid://lwqkru1wyp3y" path="res://objects/light/assets/light-beam.png" id="10_0cv44"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv8ve"]
 animations = [{

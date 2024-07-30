@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="2_mrdph"]
 [ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="3_bsj7s"]
 [ext_resource type="LabelSettings" uid="uid://fl0bxjanc6m3" path="res://fonts/Tutorial_Style.tres" id="4_dtkm2"]
-[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/Light/LightSource.tscn" id="6_loscg"]
+[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/light/LightSource.tscn" id="6_loscg"]
 [ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="8_nncr3"]
 [ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="9_00hch"]
 [ext_resource type="Resource" uid="uid://diu0prx3s43vt" path="res://alchemy/potions/potion_resource/resources/heal.tres" id="10_kjnck"]
