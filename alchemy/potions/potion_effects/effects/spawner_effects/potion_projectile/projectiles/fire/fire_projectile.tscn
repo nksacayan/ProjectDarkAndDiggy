@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbn36f4u5t0t7"]
+[gd_scene load_steps=6 format=3 uid="uid://bbn36f4u5t0t7"]
 
 [ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/fire_projectile.gd" id="1_mrjy6"]
+[ext_resource type="PackedScene" uid="uid://bttdxulcg8etx" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire_animation.tscn" id="2_jec54"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ihdvj"]
 bounce = 0.3
@@ -15,6 +16,7 @@ collision_layer = 1024
 collision_mask = 13
 physics_material_override = SubResource("PhysicsMaterial_ihdvj")
 script = ExtResource("1_mrjy6")
+animation = ExtResource("2_jec54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true

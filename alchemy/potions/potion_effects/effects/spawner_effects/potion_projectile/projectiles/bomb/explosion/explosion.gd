@@ -5,9 +5,6 @@ extends Area2D
 const DEFAULT_TILE_LAYER = 1
 
 
-func _on_timer_timeout() -> void:
-	queue_free()
-
 func _on_body_entered(body: Node2D) -> void:
 	var tilemap_collision: TileMap = body as TileMap
 	var cells_to_destroy: Array[Vector2i] = []
@@ -69,3 +66,7 @@ func _damage_player(area: Area2D) -> void:
 
 func _kill_enemy(p_area: Area2D) -> void:
 	p_area.get_parent().queue_free()
+
+
+func _on_sprite_2d_animation_finished() -> void:
+	queue_free()

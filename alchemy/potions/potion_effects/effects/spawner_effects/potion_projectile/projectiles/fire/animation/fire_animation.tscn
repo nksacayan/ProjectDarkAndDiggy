@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bttdxulcg8etx"]
+
+[ext_resource type="Texture2D" uid="uid://1b3tvlfudivt" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire-potion-1.png" id="1_eesx7"]
+[ext_resource type="Texture2D" uid="uid://4dfw2hfl0ynn" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire-potion-2.png" id="2_otaqw"]
+[ext_resource type="Texture2D" uid="uid://cvt4kgyhr87rx" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire-potion-3.png" id="3_su0r4"]
+[ext_resource type="Texture2D" uid="uid://gociuw26tfr4" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire-potion-4.png" id="4_sj4d4"]
+[ext_resource type="Script" path="res://alchemy/potions/potion_effects/effects/spawner_effects/potion_projectile/projectiles/fire/animation/fire_animation.gd" id="5_t44jg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_js08v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eesx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_otaqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_su0r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sj4d4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="FireAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_js08v")
+autoplay = "default"
+script = ExtResource("5_t44jg")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
