@@ -1,6 +1,10 @@
 extends Control
 
 
+@export var you_win: Texture2D
+@export var game_over: Texture2D
+
+
 func _on_restart_pressed():
 	get_parent().load_main()
 	self.queue_free()

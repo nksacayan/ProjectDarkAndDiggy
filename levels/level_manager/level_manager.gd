@@ -3,6 +3,7 @@ extends Node
 
 signal next_level_transitioned
 @export var main_menu: PackedScene
+@export var game_over_scene: PackedScene
 @export var level_list: Array[PackedScene]
 var level_select : int = 0
 
@@ -31,9 +32,9 @@ func load_main() -> void:
 	add_child(main_menu.instantiate())
 
 func game_over() -> void:
-	call_deferred("_deffered_game_over")
+	call_deferred("_defered_game_over")
 
-func _deffered_game_over() -> void:
+func _defered_game_over() -> void:
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
-	add_child(load("res://Menu/game_over_menu.tscn").instantiate())
+	add_child(game_over_scene.instantiate())
 	
