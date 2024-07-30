@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://di03pj8g1i5fn"]
+[gd_scene load_steps=9 format=3 uid="uid://di03pj8g1i5fn"]
 
 [ext_resource type="Script" path="res://prototype_ui/player_hud/player_hud.gd" id="1_288fp"]
 [ext_resource type="PackedScene" uid="uid://bhqna0nc53y4b" path="res://prototype_ui/player_hud/lives/lives_hud.tscn" id="2_xshgd"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://csqve737x2i4r" path="res://prototype_ui/player_hud/armor_image/armor_image.tscn" id="4_kjwgk"]
 [ext_resource type="PackedScene" uid="uid://3bm8by82q253" path="res://prototype_ui/inventory_alchemy_view/score_label/score_label.tscn" id="5_i6go6"]
 [ext_resource type="Texture2D" uid="uid://k0pd82rx6qn5" path="res://prototype_ui/inventory_alchemy_view/inventory_panel/inventory-icon.png" id="5_qdyld"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_srlsg"]
+font_size = 72
 
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_288fp")
@@ -78,6 +81,7 @@ offset_bottom = 146.0
 grow_horizontal = 1
 grow_vertical = 1
 theme_override_font_sizes/font_size = 72
+label_settings = SubResource("LabelSettings_srlsg")
 horizontal_alignment = 0
 
 [connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]

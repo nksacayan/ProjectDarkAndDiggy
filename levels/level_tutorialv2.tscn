@@ -146,7 +146,7 @@ offset_bottom = -566.0
 metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel7/MarginContainer" index="0"]
-text = "Potions and ingredients
+text = "Beer and ingredients
 can be picked up"
 
 [node name="TextPanel15" parent="." instance=ExtResource("23_pibi5")]
@@ -157,7 +157,7 @@ offset_bottom = 245.0
 metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel15/MarginContainer" index="0"]
-text = "This potion heals you"
+text = "This Beer heals you"
 
 [node name="TextPanel8" parent="." instance=ExtResource("23_pibi5")]
 offset_left = 9720.0
@@ -198,7 +198,8 @@ offset_bottom = 245.0
 metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel18/MarginContainer" index="0"]
-text = "Not fly, jump good"
+text = "High Jump"
+horizontal_alignment = 1
 
 [node name="TextPanel9" parent="." instance=ExtResource("23_pibi5")]
 offset_left = 10760.0
@@ -208,7 +209,7 @@ offset_bottom = -545.0
 metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel9/MarginContainer" index="0"]
-text = "Click on potions while the
+text = "Click on Beer while the
 inventory is open to move 
 them to the quickbar"
 
@@ -220,7 +221,7 @@ offset_bottom = -560.0
 metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel10/MarginContainer" index="0"]
-text = "Click on potions in the quickbar 
+text = "Click on Beers in the quickbar 
 while the inventory is 
 closed to use them"
 
@@ -324,8 +325,8 @@ metadata/_edit_group_ = true
 
 [node name="Label" parent="TextPanel12/MarginContainer" index="0"]
 text = "Click on ingredients to move them to the alchemy window.
-Press the mix button to make a potion!
-Click on the potion to move it back to your inventory."
+Press the mix button to make a Beer!
+Click on the Beer to move it back to your inventory."
 
 [node name="TextPanel19" parent="." instance=ExtResource("23_pibi5")]
 offset_left = 14752.0
@@ -470,7 +471,7 @@ position = Vector2(15947, 954)
 position = Vector2(15853, 948)
 
 [node name="Kobold3" parent="." instance=ExtResource("4_dcv7q")]
-position = Vector2(24800, -472)
+position = Vector2(24714, -3)
 
 [node name="PatrolBoundLeft" parent="Kobold3" index="6"]
 position = Vector2(24077, 149)
