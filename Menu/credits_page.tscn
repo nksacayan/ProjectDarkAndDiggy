@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch5u00i6oupm0"]
+[gd_scene load_steps=4 format=3 uid="uid://ch5u00i6oupm0"]
 
 [ext_resource type="Script" path="res://Menu/credits_page.gd" id="1_tiex5"]
+[ext_resource type="Texture2D" uid="uid://cfecck2fwku0u" path="res://Menu/images/credits.png" id="2_7isjp"]
+[ext_resource type="Texture2D" uid="uid://sq0wa3ejyj5s" path="res://Menu/images/back.png" id="2_uxyk4"]
 
-[node name="CreditsPage" type="Control"]
-layout_mode = 3
+[node name="CreditsPage" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,46 +12,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tiex5")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.5
-offset_top = -31.0
-offset_right = 22.5
-grow_horizontal = 2
-grow_vertical = 0
-text = "Back"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 
-[node name="RichTextLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -401.5
-offset_top = -167.5
-offset_right = 401.5
-offset_bottom = 167.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Credits
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-Lead Programmer: Nicholas Sacayan
-Programmer 2? : Frank Diaz
-Art Designer: Angela LastName
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_7isjp")
+expand_mode = 1
 
-Music: The Northern Path by Alexander Nakarada | https://creatorchords.com
-Music promoted by https://www.chosic.com/free-music/all/
-Creative Commons CC BY 4.0
-https://creativecommons.org/licenses/by/4.0/
-SFX: This [video/theatre piece/...] uses these sounds from freesound:
-Knife Stab.wav by Mixedupmoviestuff -- https://freesound.org/s/179222/ -- License: Creative Commons 0
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-"
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer5" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_uxyk4")
+texture_pressed = ExtResource("2_uxyk4")
+texture_hover = ExtResource("2_uxyk4")
+
+[node name="Spacer6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]
