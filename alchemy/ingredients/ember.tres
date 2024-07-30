@@ -2,13 +2,13 @@
 
 [ext_resource type="Resource" uid="uid://cyjeqb3ctpiok" path="res://alchemy/potions/potion_resource/resources/distraction.tres" id="1_c4a2m"]
 [ext_resource type="Script" path="res://alchemy/ingredients/ingredient_resource.gd" id="1_w4qbc"]
-[ext_resource type="Texture2D" uid="uid://3dlm4yly8ja" path="res://art_dump/placeholder/structure_house.png" id="2_glu0e"]
 [ext_resource type="Resource" uid="uid://c0a08h7xk6ys7" path="res://alchemy/potions/potion_resource/resources/fire.tres" id="2_pgxfg"]
 [ext_resource type="Resource" uid="uid://cj88vwog4460f" path="res://alchemy/potions/potion_resource/resources/bomb.tres" id="3_5rkrm"]
 [ext_resource type="Resource" uid="uid://djxvbtmcgl0a7" path="res://alchemy/potions/potion_resource/resources/sticky_flame.tres" id="4_qyc47"]
+[ext_resource type="Texture2D" uid="uid://b4r5nvm0ids68" path="res://alchemy/ingredients/ember.png" id="6_khxjk"]
 
 [resource]
 script = ExtResource("1_w4qbc")
 combo_result = Array[Resource("res://alchemy/potions/potion_resource/potion_resource.gd")]([ExtResource("1_c4a2m"), ExtResource("2_pgxfg"), ExtResource("3_5rkrm"), ExtResource("4_qyc47")])
 item_name = "ember"
-texture2d = ExtResource("2_glu0e")
+texture2d = ExtResource("6_khxjk")
