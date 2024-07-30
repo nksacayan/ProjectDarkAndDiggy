@@ -1,57 +1,119 @@
-[gd_scene load_steps=3 format=3 uid="uid://bet56jl07wp1l"]
+[gd_scene load_steps=7 format=3 uid="uid://bet56jl07wp1l"]
 
 [ext_resource type="Script" path="res://Menu/Menu.gd" id="1_ig770"]
+[ext_resource type="PackedScene" uid="uid://ch5u00i6oupm0" path="res://Menu/credits_page.tscn" id="2_fx7gk"]
+[ext_resource type="Texture2D" uid="uid://d4evuqfk2rys6" path="res://Menu/images/Logo.png" id="3_6yv82"]
+[ext_resource type="Texture2D" uid="uid://10wxo4wktr6j" path="res://Menu/images/Start Game.png" id="4_3d8rd"]
+[ext_resource type="Texture2D" uid="uid://cfecck2fwku0u" path="res://Menu/images/credits.png" id="5_kitv6"]
+[ext_resource type="Texture2D" uid="uid://b8nd76q4tl03c" path="res://Menu/images/exit.png" id="6_modh6"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_1vfrv"]
-
-[node name="Menu" type="Control"]
-layout_mode = 3
+[node name="Menu" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig770")
+credits_scene = ExtResource("2_fx7gk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = -55.0
-offset_right = 94.0
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Start"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="Spacer" type="Control" parent="VBoxContainer"]
 layout_mode = 2
-text = "Credits"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 0, 1, 1)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -184.0
-offset_top = 300.0
-offset_right = 184.0
-offset_bottom = 428.0
-grow_horizontal = 2
-texture = SubResource("CanvasTexture_1vfrv")
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 14.0
+texture = ExtResource("3_6yv82")
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="CreditsButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.5
+texture_normal = ExtResource("5_kitv6")
+texture_pressed = ExtResource("5_kitv6")
+texture_hover = ExtResource("5_kitv6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.75
+texture_normal = ExtResource("4_3d8rd")
+texture_pressed = ExtResource("4_3d8rd")
+texture_hover = ExtResource("4_3d8rd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.5
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+texture_normal = ExtResource("6_modh6")
+texture_pressed = ExtResource("6_modh6")
+texture_hover = ExtResource("6_modh6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
