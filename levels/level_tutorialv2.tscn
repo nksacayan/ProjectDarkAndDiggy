@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://n1ugbsf4yjas" path="res://tile_stuff/default_tile_set.tres" id="2_pyryn"]
 [ext_resource type="PackedScene" uid="uid://cmmwqu3w11y2e" path="res://enemy/kobold/kobold.tscn" id="4_dcv7q"]
 [ext_resource type="PackedScene" uid="uid://cd6ndg0vgc407" path="res://player/player.tscn" id="5_p0t82"]
-[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/Light/LightSource.tscn" id="6_axd8s"]
+[ext_resource type="PackedScene" uid="uid://dw1gwc75mhp6q" path="res://objects/light/LightSource.tscn" id="6_axd8s"]
 [ext_resource type="PackedScene" uid="uid://by7jfbituop2d" path="res://objects/area_flags/finish_line.tscn" id="7_xe1ls"]
 [ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="8_tljbd"]
 [ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="9_pcao3"]

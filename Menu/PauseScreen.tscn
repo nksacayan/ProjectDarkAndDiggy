@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxfvexvgjl73"]
+
+[ext_resource type="Script" path="res://Menu/PauseScreen.gd" id="1_kavcp"]
+
+[node name="PauseMenu" type="PanelContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_kavcp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="ButtonBack" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

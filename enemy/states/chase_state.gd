@@ -6,7 +6,10 @@ const _KOCKBACK_FORCE_X : float = 100000.0
 const _KOCKBACK_FORCE_Y : float = -7500
 const _DETECT_RANGE : float = 250.0
 
+@onready var attack_cooldown_timer : Timer = %AttackCooldown
+
 var los_count : int = 0
+var prev_move : KoboldBody2D.MovementModifier
 var target #Assume Area2D. Can be PlayerBody or DistractionOBJ
 var distracted : bool = false
 
@@ -76,18 +79,27 @@ func target_hit() -> void:
 		return
 	apply_knockback()
 	target.health.current_health -= 1
+	attack_cooldown()
+	
 
 #theorectially if this run target should only be PlayerBody? I hope ;-;
 func apply_knockback() -> void:
 	if !target is PlayerBody:
-		print_debug("Target not PlayerBody")
 		return
 	
 	target.knockback_force = Vector2(_KOCKBACK_FORCE_X * enemy.move_mod , \
 		_KOCKBACK_FORCE_Y)
 	target.stun_timer.start()
 
+func attack_cooldown() ->void:
+	attack_cooldown_timer.start()
+	prev_move = enemy.move_mod
+	enemy.move_mod = KoboldBody2D.MovementModifier.CENTER
 
 #Kobold Hitbox collision detected
 func _on_hitbox_area_entered(_area) -> void:
 	target_hit()
+
+
+func _on_attack_cooldown_timeout():
+	enemy.move_mod = prev_move
