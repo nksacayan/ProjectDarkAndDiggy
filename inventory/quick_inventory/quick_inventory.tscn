@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvyuegee8c72l"]
+[gd_scene load_steps=3 format=3 uid="uid://bvyuegee8c72l"]
 
 [ext_resource type="Script" path="res://inventory/quick_inventory/quick_inventory.gd" id="1_gdtt7"]
+[ext_resource type="Resource" uid="uid://dmg3qkyddiq1v" path="res://alchemy/potions/potion_resource/resources/earth_armor.tres" id="2_m2dgb"]
 
 [node name="QuickInventory" type="Node"]
 script = ExtResource("1_gdtt7")
+items = Array[Resource("res://alchemy/item/item_resource.gd")]([ExtResource("2_m2dgb")])
 max_items = 6

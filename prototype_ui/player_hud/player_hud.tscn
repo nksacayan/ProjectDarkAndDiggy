@@ -38,13 +38,15 @@ grow_vertical = 0
 [node name="ArmorImage" parent="." instance=ExtResource("4_kjwgk")]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 107.0
-offset_bottom = 107.0
+offset_left = 1032.0
+offset_top = -176.0
+offset_right = 1144.0
+offset_bottom = -64.0
 grow_horizontal = 1
-grow_vertical = 1
+grow_vertical = 0
 
 [node name="InventoryButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
