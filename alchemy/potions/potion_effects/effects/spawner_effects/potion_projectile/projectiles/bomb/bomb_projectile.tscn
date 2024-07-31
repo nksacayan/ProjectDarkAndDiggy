@@ -35,7 +35,7 @@ unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_i0ybj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 

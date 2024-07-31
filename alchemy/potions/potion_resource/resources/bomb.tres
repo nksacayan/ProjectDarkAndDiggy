@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_a83vf")
 potion_effect = ExtResource("1_dmcau")
-vector = Vector2(0, 0)
+vector = Vector2(1000, 0)
 projectile = ExtResource("2_kjmni")
 item_name = "bomb"
 texture2d = ExtResource("3_owkmh")
