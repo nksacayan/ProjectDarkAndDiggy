@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjwrrsvl7fuin"
-path="res://.godot/imported/circular-light.png-e1f53ebbdeaacab357fea56fa984baed.ctex"
+path="res://.godot/imported/circular-light.png-e889f3f66c4b96a3e06146a3f2690a13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/light/assets/circular-light.png"
-dest_files=["res://.godot/imported/circular-light.png-e1f53ebbdeaacab357fea56fa984baed.ctex"]
+source_file="res://objects/Light/assets/circular-light.png"
+dest_files=["res://.godot/imported/circular-light.png-e889f3f66c4b96a3e06146a3f2690a13.ctex"]
 
 [params]
 
