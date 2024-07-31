@@ -17,6 +17,10 @@ func add_to_inventory(p_item: ItemResource) -> bool:
 		return true
 	return false
 
+func clear_inv():
+	items.clear()
+	items_updated.emit()
+
 func remove_from_inventory(p_item: ItemResource) -> void:
 	items.erase(p_item)
 	items_updated.emit()

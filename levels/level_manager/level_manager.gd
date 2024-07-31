@@ -16,6 +16,8 @@ func _ready() -> void:
 func transistion_next_level() -> void:
 	if !pause_ready:
 			pause_ready = true
+	if level_select == 1:
+		prep_game()
 	call_deferred("_deferred_transition_next_level")
 
 #Deffered call to tranistion into next level in array
@@ -32,12 +34,18 @@ func load_main() -> void:
 	if !main_menu:
 		push_error("Error: No Main Menu")
 	level_select = 0
+	prep_game()
 	add_child(main_menu.instantiate())
 	pause_ready = false
 
 func game_over(did_win: bool) -> void:
 	pause_ready = false
 	call_deferred("_defered_game_over", did_win)
+
+func prep_game():
+	AutoloadInventory.clear_inv()
+	AutoloadQuickInventory.clear_inv()
+	AutoloadScorekeeper.score = 0
 
 func _defered_game_over(did_win: bool) -> void:
 	get_child(0).queue_free() #Hopefully Frees Finished Level ¯\_(ツ)_/¯
