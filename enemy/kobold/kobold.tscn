@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmmwqu3w11y2e"]
+[gd_scene load_steps=19 format=3 uid="uid://cmmwqu3w11y2e"]
 
 [ext_resource type="Script" path="res://enemy/kobold/kobold_body.gd" id="1_g7ieu"]
 [ext_resource type="Texture2D" uid="uid://dp4ol3g378kl2" path="res://enemy/kobold/assets/sprites/kobold-idle.png" id="2_fsdp0"]
+[ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="2_n4hll"]
 [ext_resource type="Script" path="res://enemy/states/state_machine.gd" id="3_5jy2q"]
+[ext_resource type="Resource" uid="uid://c8hp82agsjbik" path="res://alchemy/ingredients/kobold_ear.tres" id="3_g0sxx"]
 [ext_resource type="Texture2D" uid="uid://djdwpg6h20kd1" path="res://enemy/kobold/assets/sprites/kobold-walk-1.png" id="3_obm4m"]
 [ext_resource type="Script" path="res://enemy/states/patrol_state.gd" id="4_2t6yl"]
 [ext_resource type="Texture2D" uid="uid://bu4g3pnnt637e" path="res://enemy/kobold/assets/sprites/kobold-walk-2.png" id="4_dgtie"]
 [ext_resource type="Script" path="res://enemy/kobold/KoboldAnimationHandler.gd" id="5_b012h"]
 [ext_resource type="Script" path="res://enemy/states/chase_state.gd" id="5_rrv1x"]
 [ext_resource type="Script" path="res://enemy/states/return_state.gd" id="9_5xfb1"]
-[ext_resource type="Texture2D" uid="uid://lwqkru1wyp3y" path="res://objects/light/assets/light-beam.png" id="10_0cv44"]
+[ext_resource type="Texture2D" uid="uid://lwqkru1wyp3y" path="res://objects/Light/assets/light-beam.png" id="10_0cv44"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv8ve"]
 animations = [{
@@ -56,6 +58,9 @@ position = Vector2(0, -1)
 collision_layer = 8
 collision_mask = 1025
 script = ExtResource("1_g7ieu")
+collectible_scene = ExtResource("2_n4hll")
+kobold_ear_resource = ExtResource("3_g0sxx")
+drop_chance = 1
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

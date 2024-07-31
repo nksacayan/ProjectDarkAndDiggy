@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnd65v5eyfwc4"]
+[gd_scene load_steps=10 format=3 uid="uid://dnd65v5eyfwc4"]
 
 [ext_resource type="Script" path="res://levels/level_manager/level_manager.gd" id="1_tfgg6"]
 [ext_resource type="PackedScene" uid="uid://cuv6opd7uqiqb" path="res://levels/level_1.tscn" id="2_6puk1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8uxdcsohkpjn" path="res://levels/level_tutorialv2.tscn" id="4_7gocg"]
 [ext_resource type="PackedScene" uid="uid://cxfvexvgjl73" path="res://Menu/PauseScreen.tscn" id="4_tal1s"]
 [ext_resource type="PackedScene" uid="uid://bjhrsgefwfckj" path="res://levels/level_Reward.tscn" id="5_6bhbm"]
+[ext_resource type="PackedScene" uid="uid://cql6scjg0258r" path="res://levels/nicks_new_test_level.tscn" id="5_7qm8t"]
 [ext_resource type="PackedScene" uid="uid://povjfshbrmp3" path="res://levels/level_2.tscn" id="6_bfh0a"]
 
 [node name="LevelManager" type="Node"]
@@ -14,4 +15,4 @@ script = ExtResource("1_tfgg6")
 main_menu = ExtResource("2_spcuv")
 game_over_scene = ExtResource("3_8emjk")
 pause_menu_scene = ExtResource("4_tal1s")
-level_list = Array[PackedScene]([ExtResource("4_7gocg"), ExtResource("5_6bhbm"), ExtResource("2_6puk1"), ExtResource("5_6bhbm"), ExtResource("6_bfh0a")])
+level_list = Array[PackedScene]([ExtResource("5_7qm8t"), ExtResource("4_7gocg"), ExtResource("5_6bhbm"), ExtResource("2_6puk1"), ExtResource("5_6bhbm"), ExtResource("6_bfh0a")])

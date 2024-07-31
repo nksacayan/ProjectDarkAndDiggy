@@ -17,7 +17,6 @@ var _gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 	%AnimatedSprite2D as PlayerAnimationHandler
 @onready var stun_timer : Timer = %StunTimer
 
-
 var knockback_force : Vector2 = Vector2(0,0)
 var armor_flag : bool = false:
 	set(value):
@@ -63,22 +62,21 @@ func _try_digging() -> void:
 	digger.dig_in_direction(player_input.dig_direction)
 
 func _check_target(area) -> void:
-	var enemy :KoboldBody2D = area.get_parent()
+	var enemy :KoboldBody2D = area.get_parent() as KoboldBody2D
 	var sm : StateMachine = enemy.get_node("StateMachine")
 	if sm.current_state.name == "ChaseState":
 		if !armor_flag:
 			return
 		else:
-			armor_flag = false	
+			armor_flag = false
 	AutoloadAudioManager.play_attack()
-	enemy.queue_free()
+	enemy.die()
 
 func _on_hitbox_area_entered(area) -> void:
 	_check_target(area)
 
 func _on_stun_timer_timeout():
 	knockback_force = Vector2(0,0) # Reset Knockback Force
-
 
 func _on_health_died():
 	get_parent().get_parent().game_over(false)

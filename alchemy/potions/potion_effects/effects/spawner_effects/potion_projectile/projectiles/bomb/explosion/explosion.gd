@@ -65,8 +65,7 @@ func _damage_player(area: Area2D) -> void:
 		player.health.current_health -= 1
 
 func _kill_enemy(p_area: Area2D) -> void:
-	p_area.get_parent().queue_free()
-
+	(p_area.get_parent() as KoboldBody2D).die()
 
 func _on_sprite_2d_animation_finished() -> void:
 	queue_free()

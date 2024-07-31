@@ -2,6 +2,9 @@ extends CharacterBody2D
 class_name KoboldBody2D
 
 const _JUMP_FORCE: float = -1500.0
+@export var collectible_scene: PackedScene
+@export var kobold_ear_resource: IngredientResource
+@export var drop_chance: int
 @onready var stun_timer : Timer = %StunTimer
 @onready var state_mach : StateMachine = %StateMachine
 @onready var player_detect_cast : ShapeCast2D = %PlayerDetectionCast
@@ -45,9 +48,7 @@ func stunned_movement(delta):
 func _do_movement(delta:float):
 	velocity.x = state_mach.current_state._MOVE_SPEED * move_mod * delta
 
-
 func check_floor():
-	
 	#Runs when raycast Finds a hole in the floor
 	if !floor_detect_cast.is_colliding():
 		_try_jump()
@@ -63,6 +64,19 @@ func apply_gravity(delta):
 	# Fall.
 	velocity.y = velocity.y + _gravity * delta
 	
-
 func _on_stun_timer_timeout():
 	knockback_force = Vector2(0,0) #Reset Knockback Force
+
+func die() -> void:
+	var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+	var rand: int = rng.randi_range(0, drop_chance)
+	if rand == 0:
+		_drop_kobold_ear()
+	queue_free()
+
+func _drop_kobold_ear() -> void:
+	var kobold_ear_collectible: Collectable = collectible_scene.instantiate() as Collectable
+	kobold_ear_collectible.item = kobold_ear_resource
+	var parent = get_parent()
+	parent.call_deferred("add_child", kobold_ear_collectible)
+	kobold_ear_collectible.global_position = global_position
