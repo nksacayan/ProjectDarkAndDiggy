@@ -4,7 +4,6 @@ extends Node
 signal next_level_transitioned
 @export var main_menu: PackedScene
 @export var game_over_scene: PackedScene
-@export var pause_menu_scene: PackedScene
 @export var level_list: Array[PackedScene]
 var level_select : int = 0
 var pause_ready : bool = false
@@ -28,14 +27,6 @@ func _deferred_transition_next_level() -> void:
 	add_child(level_list[level_select].instantiate())
 	level_select += 1
 	next_level_transitioned.emit()
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_pause_menu") and get_children().size() < 2:
-		add_child(pause_menu_scene.instantiate())
-		get_tree().paused = true
-
-
-
 
 func load_main() -> void:
 	if !main_menu:

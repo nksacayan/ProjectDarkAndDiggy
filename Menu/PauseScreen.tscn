@@ -1,37 +1,103 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxfvexvgjl73"]
+[gd_scene load_steps=5 format=3 uid="uid://cxfvexvgjl73"]
 
 [ext_resource type="Script" path="res://Menu/PauseScreen.gd" id="1_kavcp"]
+[ext_resource type="Texture2D" uid="uid://ceh4h545hnscc" path="res://Menu/images/Paused.png" id="1_w5ei6"]
+[ext_resource type="Texture2D" uid="uid://sq0wa3ejyj5s" path="res://Menu/images/back.png" id="2_0gemg"]
+[ext_resource type="Texture2D" uid="uid://b8nd76q4tl03c" path="res://Menu/images/exit.png" id="3_sefev"]
 
-[node name="PauseMenu" type="PanelContainer"]
+[node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 5
+script = ExtResource("1_kavcp")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-script = ExtResource("1_kavcp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Spacer" type="Control" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Paused"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
 
-[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "QUIT"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
 
-[node name="ButtonBack" type="Button" parent="VBoxContainer"]
+[node name="Spacer5" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Back"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Camera2D" type="Camera2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(960, 540)
+[node name="Label" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+texture = ExtResource("1_w5ei6")
+expand_mode = 1
 
-[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[node name="Spacer4" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer5" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="ButtonBack" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+texture_normal = ExtResource("2_0gemg")
+texture_pressed = ExtResource("2_0gemg")
+texture_hover = ExtResource("2_0gemg")
+stretch_mode = 0
+
+[node name="Spacer6" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="ButtonQuit" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+texture_normal = ExtResource("3_sefev")
+texture_pressed = ExtResource("3_sefev")
+texture_hover = ExtResource("3_sefev")
+stretch_mode = 0
+
+[node name="Spacer4" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Spacer3" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

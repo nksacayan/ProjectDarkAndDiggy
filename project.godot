@@ -24,6 +24,7 @@ AutoloadMixer="*res://alchemy/mixer/mixer.tscn"
 AutoloadQuickInventory="*res://inventory/quick_inventory/quick_inventory.tscn"
 AutoloadInventoryAlchemyView="*res://prototype_ui/inventory_alchemy_view/inventory_alchemy_view.tscn"
 AutoloadAudioManager="*res://Audio/AudioManager.tscn"
+AutoloadPauseScreen="*res://Menu/PauseScreen.tscn"
 
 [display]
 
