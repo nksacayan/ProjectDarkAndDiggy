@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://co2br1d8dw6vr"]
+[gd_scene load_steps=6 format=3 uid="uid://co2br1d8dw6vr"]
 
 [ext_resource type="Script" path="res://player/digger/digger.gd" id="1_1nv6f"]
+[ext_resource type="PackedScene" uid="uid://c2qn01wpw4r24" path="res://alchemy/collectable/collectable.tscn" id="2_3wwlt"]
+[ext_resource type="Resource" uid="uid://itiy5w252ilc" path="res://alchemy/ingredients/black_powder.tres" id="3_8mnb2"]
+[ext_resource type="Resource" uid="uid://btvhlfaflv6wa" path="res://alchemy/ingredients/ember.tres" id="4_fpbig"]
+[ext_resource type="Resource" uid="uid://cjje472qn11dq" path="res://alchemy/ingredients/special_dirt.tres" id="5_1yxrj"]
 
 [node name="Digger" type="Node2D"]
 script = ExtResource("1_1nv6f")
+collectible_scene = ExtResource("2_3wwlt")
+resources = Array[Resource("res://alchemy/ingredients/ingredient_resource.gd")]([ExtResource("3_8mnb2"), ExtResource("4_fpbig"), ExtResource("5_1yxrj")])
 
 [node name="DigTimer" type="Timer" parent="."]
 unique_name_in_owner = true

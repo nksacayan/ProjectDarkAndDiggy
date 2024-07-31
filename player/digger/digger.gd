@@ -1,6 +1,10 @@
 class_name Digger
 extends Node2D
 
+
+@export var collectible_scene: PackedScene
+@export var resources: Array[IngredientResource]
+
 const HORIZONTAL_TARGET_DISTANCE: int = 96
 const VERTICAL_TARGET_DISTANCE: int = 160
 const DEFAULT_TILE_LAYER: int = 1
@@ -44,6 +48,7 @@ func _execute_dig() -> void:
 		print_stack()
 		push_error("Tried to dig while target tilemap or cell not set.")
 	target_tilemap.erase_cell(DEFAULT_TILE_LAYER, target_cell)
+	_spawn_collectible()
 	_stop_digging()
 
 func _cast_for_diggables() -> void:
@@ -79,3 +84,24 @@ func _is_new_dig_target(p_new_target_tilemap: TileMap, p_new_target_cell: Vector
 
 func _on_dig_timer_timeout() -> void:
 	_execute_dig()
+
+func _spawn_collectible() -> void:
+	var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+	# random chance to drop item at all
+	if rng.randi_range(0, 3) != 0:
+		return
+		
+	var ingredient_collectible: Collectable = collectible_scene.instantiate() as Collectable
+	# random selection which item
+	var random_collectible_index := rng.randi_range(0, resources.size() - 1)
+	ingredient_collectible.item = resources[random_collectible_index]
+	add_child(ingredient_collectible)
+	ingredient_collectible.top_level = true
+	# turn target cell back to global
+	var local := target_tilemap.map_to_local(target_cell)
+	var global_cell := target_tilemap.to_global(local)
+	ingredient_collectible.global_position = global_cell
+
+
+
+
