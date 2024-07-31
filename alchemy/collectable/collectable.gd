@@ -12,8 +12,10 @@ extends Node2D
 func _ready() -> void:
 	_setup_sprite()
 	
-
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if item as PotionResource and AutoloadQuickInventory.add_to_inventory(item):
+		queue_free()
+		return
 	AutoloadInventory.add_to_inventory(item)
 	queue_free()
 
