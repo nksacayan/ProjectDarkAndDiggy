@@ -24,3 +24,9 @@ layout_mode = 2
 
 [node name="HeartRect3" parent="." instance=ExtResource("4_5ucf4")]
 layout_mode = 2
+
+[node name="HeartRect4" parent="." instance=ExtResource("4_5ucf4")]
+layout_mode = 2
+
+[node name="HeartRect5" parent="." instance=ExtResource("4_5ucf4")]
+layout_mode = 2
