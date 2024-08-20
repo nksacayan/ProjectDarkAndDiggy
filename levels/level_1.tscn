@@ -64,7 +64,6 @@ position = Vector2(24132, 2498)
 position = Vector2(21275, 2231)
 
 [node name="Kobold2" parent="." instance=ExtResource("4_vblpn")]
-visible = false
 position = Vector2(13435, 1903)
 
 [node name="PatrolBoundLeft" parent="Kobold2" index="6"]
@@ -101,7 +100,6 @@ position = Vector2(16989, 1975)
 position = Vector2(16745, 1978)
 
 [node name="Kobold5" parent="." instance=ExtResource("4_vblpn")]
-visible = false
 position = Vector2(10848, 2623)
 
 [node name="PatrolBoundLeft" parent="Kobold5" index="6"]
